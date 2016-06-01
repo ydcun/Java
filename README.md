@@ -1,4 +1,4 @@
-[TOC]
+[ TOC ]
 # Java
   Maven项目
   * maven3.3.3

@@ -39,6 +39,9 @@ public class TestG1 {
 			System.out.println(obj);
 		}
 	}
+	/**
+	 * 用Entry遍历Map
+	 */
 	public void printMap(){
 		Map<String,Integer> map = new HashMap<String,Integer>();
 		map.put("wxm",12);
@@ -48,6 +51,17 @@ public class TestG1 {
 		for(Map.Entry<String,Integer> entry:entrySet){
 			System.out.println(entry.getKey()+":"+entry.getValue());
 		} 
+	}
+	/**
+	 * 接受的必须是引用数据类型
+	 * @param a
+	 * @param s
+	 * @param e
+	 */
+	public static <T extends Number> void swap(T[] a ,int s,int e){
+		T temp = a[s];
+		a[s] = a[e];
+		a[e] = temp;
 	}
 	public  static void main(String[] arge){
 		try {

@@ -1,13 +1,23 @@
 package com.ydcun.java.generics;
 
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Vector;
 
-public class TestG1 {
+/**
+ * @author ydcunu809
+ *
+ * @param <H> 泛型类
+ */
+public class TestG1<H> {
 	/**
 	 * 通过泛型减少强制类型转化
 	 */
@@ -53,6 +63,23 @@ public class TestG1 {
 		} 
 	}
 	/**
+	 * 获取参数的实际类型
+	 * @throws Exception 
+	 */
+	public void getType() throws Exception{
+		Vector<Date> v1 = new Vector<Date>();
+		//通过方法间接的获取返回值类型，和参数列表的类型
+		Method applyMethod = TestG1.class.getMethod("applyVector",Vector.class);
+		Type[] types = applyMethod.getGenericParameterTypes();
+		ParameterizedType pType = (ParameterizedType)types[0];
+		System.out.println(pType.getRawType());//实际化的类型参数
+		System.out.println(pType.getActualTypeArguments()[0]);
+	}
+	public void applyVector(Vector<Date> v1){
+		
+	}
+	/**
+	 * 方法泛型
 	 * 接受的必须是引用数据类型
 	 * @param a
 	 * @param s
@@ -65,13 +92,14 @@ public class TestG1 {
 	}
 	public  static void main(String[] arge){
 		try {
-			TestG1 testG1 = new TestG1();
+			TestG1<String> testG1 = new TestG1<String>();
 	//		testG1.method1();
 			testG1.method2();
 			List<String> list1 = new ArrayList<String>();
 			list1.add("ddd");
 //			testG1.printCollection(list1);
 			testG1.printMap();
+			testG1.getType();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

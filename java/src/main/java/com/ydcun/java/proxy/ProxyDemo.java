@@ -6,9 +6,9 @@ import java.util.Date;
  * @author ydcunu809
  * proxy model
  * 
- * CGLIB lib
+ * CGLIB 包可以实现使用接口生成代理类
  */
-public class Proxy extends IBase {
+public class ProxyDemo extends IBase {
 	Target target = new Target();
 	@Override
 	public void run() {
@@ -18,6 +18,6 @@ public class Proxy extends IBase {
 	}
 	
 	public static void main(String[] args){
-		new Proxy().run();
+		new ProxyDemo().run();
 	}
 }

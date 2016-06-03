@@ -5,6 +5,7 @@ package com.ydcun.java.proxy.aopframework;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Properties;
 
 
@@ -36,5 +37,9 @@ public class BeanFactory {
 			return proxy;
 		}
 		return bean;
+	}
+	public static void main(String[] args) {
+		int[] b = {115,108,101,101,112,95,97,34,125,0,0,0,0,0,0,0};
+		System.out.printf("%d",'\0');
 	}
 }

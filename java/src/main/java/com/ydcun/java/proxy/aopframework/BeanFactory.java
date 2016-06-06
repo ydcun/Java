@@ -38,8 +38,4 @@ public class BeanFactory {
 		}
 		return bean;
 	}
-	public static void main(String[] args) {
-		int[] b = {115,108,101,101,112,95,97,34,125,0,0,0,0,0,0,0};
-		System.out.printf("%d",'\0');
-	}
 }

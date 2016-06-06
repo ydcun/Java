@@ -6,7 +6,7 @@
   * jdk1.8
   * web2.5
 
-##com.ydcun.java 下记录java学习总结案例
+###com.ydcun.java 下记录java学习总结案例
 
 ###generics 泛型使用
   1. 通过泛型减少类型强制转换

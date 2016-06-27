@@ -11,6 +11,9 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
  *	2.将方法定义成抽象的，在子类中重写抽象方法
  *  3.定义枚举类型，很容易获取枚举的名字，排行（从0开始）,从名字到对象（valueOf）,获取枚举中所有values
  *  4.枚举添加构造方法
+ *  5.枚举添加抽象的构造方法
+ *  6.创建子类的时候可以调用父类的有参构造方法
+ *  7.枚举可以实现单例
  */
 public class EnumTest {
 	//用java枚举方式实现,
@@ -45,5 +48,26 @@ public class EnumTest {
 		System.out.println(WeekDay3.values().length);//所有元素转化为数组
 		System.out.println(weekDay3.nextDay());
 		
+	}
+	public enum TrafficLamp{
+		RED(60){
+			@Override
+			public TrafficLamp nextLamp() {
+				return GREEN;
+			}
+		},GREEN(70){
+			@Override
+			public TrafficLamp nextLamp() {
+				return YELLOW;
+			}
+		},YELLOW(10){
+			@Override
+			public TrafficLamp nextLamp() {
+				return RED;
+			}
+		};
+		public abstract TrafficLamp nextLamp();
+		private int time;
+		private TrafficLamp(int time){this.time = time;}
 	}
 }

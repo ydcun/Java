@@ -13,9 +13,9 @@ import java.util.Date;
  * 
  * 如果将自动编译的class文件删除就会在自定义的类加载器下面找，类加载的委托机制
  * 		实验步骤：1. 先将ClassLoaderAttachment.class进行加密放到resources目录下
- * 				2. 将加密的文件替换原来的class文件
- * 				3. 通过自定义类加载加载，发现出错，原因是父类会加载自己的class文件而class已经加密了
- * 				4. 删除自动生成目录下的class文件，在运行正常加载
+ * 			  2. 将加密的文件替换原来的class文件
+ * 			  3. 通过自定义类加载加载，发现出错，原因是父类会加载自己的class文件而class已经加密了
+ * 			  4. 删除自动生成目录下的class文件，在运行正常加载
  */
 public class ClassLoaderTest1 {
 	public static void main(String[] arge) throws Exception{

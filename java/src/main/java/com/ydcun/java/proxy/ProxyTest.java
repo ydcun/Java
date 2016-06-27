@@ -79,7 +79,6 @@ public class ProxyTest {
 			/* (non-Javadoc)
 			 * @see java.lang.reflect.InvocationHandler#invoke(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])
 			 */
-			@Override
 			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 				// TODO Auto-generated method stub
 				return null;
@@ -94,7 +93,6 @@ public class ProxyTest {
 		
 		System.out.println("---------------2---------------------");
 		Collection proxy2 = (Collection)constructor.newInstance(new InvocationHandler(){
-			@Override
 			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 				// TODO Auto-generated method stub
 				return null;
@@ -107,7 +105,6 @@ public class ProxyTest {
 				new Class[]{Collection.class}, 
 				new InvocationHandler() {
 					ArrayList target = new ArrayList();
-					@Override
 					public Object invoke(Object proxy, Method method, Object[] args)
 							throws Throwable {
 						long beginTime = System.currentTimeMillis();
@@ -135,12 +132,11 @@ public class ProxyTest {
 	 * @param target
 	 * @return
 	 */
-	private static Object getProxy(Object target,Advice advice) {
+	private static Object getProxy(final Object target,final Advice advice) {
 		Object proxy4 = Proxy.newProxyInstance(
 				target.getClass().getClassLoader(), 
 				target.getClass().getInterfaces(), 
 				new InvocationHandler() {
-					@Override
 					public Object invoke(Object proxy, Method method, Object[] args)
 							throws Throwable {
 						advice.beforeMethod();
@@ -163,13 +159,11 @@ interface Advice{
 }
 class MyAdvice implements Advice{
 	long beginTime;
-	@Override
 	public void afterMethod(Method method) {
 		System.out.println("end");
 		long endTime = System.currentTimeMillis();
 		System.out.println(method.getName()+"running time of"+(endTime-beginTime));
 	}
-	@Override
 	public void beforeMethod() {
 		System.out.println("start");
 		beginTime = System.currentTimeMillis();

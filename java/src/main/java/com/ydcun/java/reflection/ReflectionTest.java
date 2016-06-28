@@ -63,7 +63,7 @@ public class ReflectionTest {
 		//调用main方法 
 		ReflectPoint.main(new String[]{"1","2"});
 		//用反射的方法调用main 
-		String startingClassName = "com.ydcun.java.reflection.ReflecPoint";
+		String startingClassName = "com.ydcun.java.reflection.ReflectPoint";
 		Method mainMethod = Class.forName(startingClassName).getMethod("main",String[].class);
 		mainMethod.invoke(null, new Object[]{new String[]{"11","2ccc34"}});//为了兼容jdk1.4会将数组打开所以会报错
 		mainMethod.invoke(null, (Object)new String[]{"11","2ccc34"});//为了兼容jdk1.4会将数组打开所以会报错
@@ -104,7 +104,7 @@ public class ReflectionTest {
 			int len = Array.getLength(obj);
 			for(int i=0;i<len;i++){
 				System.out.println(Array.get(obj, i));
-				System.out.println(Array.get(obj, i).getClass().getTypeName());
+				System.out.println(Array.get(obj, i).getClass().getName());
 			}
 		}else{
 			System.out.println(obj);

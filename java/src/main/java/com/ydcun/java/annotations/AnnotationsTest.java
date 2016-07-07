@@ -20,7 +20,7 @@ import java.lang.reflect.Array;
  */
 public class AnnotationsTest {
 	public TestAnnotation testAnnotation = new TestAnnotation();
-	@SuppressWarnings("deprecation") 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		System.runFinalizersOnExit(false);
 		if(TestAnnotation.class.isAnnotationPresent(YdcunAnnotation.class)){

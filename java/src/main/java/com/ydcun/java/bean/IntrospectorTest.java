@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.ydcun.java.bean;
 
@@ -30,16 +30,16 @@ public class IntrospectorTest {
 		Object value =7;
 		setProperties(pt1, propertyName, value);
 		System.out.println(pt1.getX());
-		
+
 		//用apache提供的BeanUtil工具类
 		System.out.println(BeanUtils.getProperty(pt1, "x").getClass().getName());
 		BeanUtils.setProperty(pt1, "x","9");
 		System.out.println(pt1.getX());
-		
+
 		//支持级联操作  类型工具会帮助你转换
 		BeanUtils.setProperty(pt1, "birthday.time", "111");
 		System.out.println(BeanUtils.getProperty(pt1, "birthday.time"));
-		
+
 		PropertyUtils.setProperty(pt1, "x",9);
 		System.out.println(pt1.getX());
 	}

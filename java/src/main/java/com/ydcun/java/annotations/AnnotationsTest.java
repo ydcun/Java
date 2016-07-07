@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.ydcun.java.annotations;
 
@@ -11,21 +11,21 @@ import java.lang.reflect.Array;
 
 /**
  * @author ydcun_home
- * 注解  
- * 	1.@interface A{}   
+ * 注解
+ * 	1.@interface A{}
  * 	2. 应用注解
  *  3. 对应用了注解的类进行反射操作的类
- *  4. java源文件----class文件----内存字节码 分成这个三个阶段 
+ *  4. java源文件----class文件----内存字节码 分成这个三个阶段
  *  	@Override   @Deprecated
  */
 public class AnnotationsTest {
 	public TestAnnotation testAnnotation = new TestAnnotation();
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings("deprecation") 
 	public static void main(String[] args) {
 		System.runFinalizersOnExit(false);
 		if(TestAnnotation.class.isAnnotationPresent(YdcunAnnotation.class)){
 			YdcunAnnotation annotation = (YdcunAnnotation)TestAnnotation.class.getAnnotation(YdcunAnnotation.class);
-			System.out.println(annotation); 
+			System.out.println(annotation);
 			System.out.println(annotation.color());
 			System.out.println(annotation.attayAttr().length);
 			System.out.println(annotation.lamp());
@@ -50,7 +50,7 @@ public class AnnotationsTest {
 class TestAnnotation{
 	@YdcunAnnotation("ydcun")
 	public static void main(String[] args) {
-		
+
 	}
 }
 

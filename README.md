@@ -5,7 +5,7 @@
   * tomcat8.0
   * jdk1.8
   * web2.5
- 
+   
 ##com.ydcun.java 下记录java学习总结案例
 
 ###generics 泛型使用
@@ -14,15 +14,15 @@
   3. 通过问号通配符接受任意类型
   4. 用Entry遍历Map
   5. 获取类方法参数的类型和泛型类型
-  
+
 ###classloader类加载器
   1.  三个主要的类加载器：	BootStrap, 不是java类是c++写的   jre/lib/rt.jar
   					ExtClassLoader, 			   jre/lib/ext/*.jar
   					AppClassLoader				   classpath指定的所有jar或目录
-  
+
   2.  自己写的类加载器必须继承ClassLoader  并指定父类loader
       为了防止出现多份字节码，类加载器的委托机制优先让父类加载器来加载。如果自己实现一个类加载器必须有特殊的方法
- 
+
   3.  如果将自动编译的class文件删除就会在自定义的类加载器下面找，类加载的委托机制
   		实验步骤：1. 先将ClassLoaderAttachment.class进行加密放到resources目录下
   			        2. 将加密的文件替换原来的class文件

@@ -5,9 +5,9 @@
   * tomcat8.0
   * jdk1.8
   * web2.5
-   
-##com.ydcun.java 下记录java学习总结案例
 
+##com.ydcun.java 下记录java学习总结案例
+loaclhost
 ###generics 泛型使用
   1. 通过泛型减少类型强制转换
   2. 泛型是javac编译器使用的 编译器编译后会去掉泛型信息。可以通过反射来绕过语法检查

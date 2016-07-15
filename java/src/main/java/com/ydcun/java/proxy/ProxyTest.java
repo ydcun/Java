@@ -46,7 +46,7 @@ public class ProxyTest {
 		System.out.println("----------end constructor list---------");
 		
 		System.out.println("----------begin methods list---------");
-		// 获取字节码的构造方法
+		// 获取字节码的方法
 		 Method[] Methods = clazzProxy1.getMethods();
 		for(Method method:Methods){
 			String name = method.getName();

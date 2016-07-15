@@ -35,7 +35,9 @@ public class TestG1<H> {
 		System.out.println(list1.getClass() == list2.getClass());//说明指向的是统一分字节码文件
 		
 		list1.getClass().getMethod("add",Object.class).invoke(list1, "abc");
-		System.out.print(list1.get(0));
+		list2.getClass().getMethod("add",Object.class).invoke(list2, "abc");
+		System.out.println(list1.get(0));
+		System.out.println(list2.get(0));
 	}
 	/**
 	 * 通过问号通配符接受任意类型

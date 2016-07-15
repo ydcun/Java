@@ -55,7 +55,7 @@ public class ReflectTest2 {
 		InputStream ips2 = ReflectTest2.class.getResourceAsStream("config.properties");
 		Properties props2 = new Properties();
 		props2.load(ips2);
-		ips.close();//将通道关了
+		ips2.close();//将通道关了
 		String className2 = props.getProperty("classname");
 		System.out.println(className2);
 	}

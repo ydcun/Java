@@ -37,7 +37,8 @@ public class ClassLoaderTest1 {
 //		System.out.println(new ClassLoaderAttachment().toString());
 		
 		/*如果将自动编译的class文件删除就会在自定义的类加载器下面找，类加载的委托机制*/
-		Class clazz = new MyClassLoader("/home/ydcunu809/git/java/src/main/resources").loadClass("com.ydcun.java.classloader.ClassLoaderAttachment");
+		System.out.println(ClassLoaderTest1.class.getResource("/").getPath());
+		Class clazz = new MyClassLoader(ClassLoaderTest1.class.getResource("/").getPath()).loadClass("com.ydcun.java.classloader.ClassLoaderAttachment");
 		Date d1 = (Date)clazz.newInstance();
 		System.out.println(d1); 
 		//ClassLoaderAttachment n=new ClassLoaderAttachment();

@@ -24,5 +24,6 @@ public class PowerOfFour {
 				System.out.println("false"+i);
 			}
 		}
+		
 	}
 }

@@ -10,12 +10,18 @@ import java.util.Date;
  *
  */
 public class ReflectPoint {
+	private ReflectPoint p;
 	private Date birthday = new Date();
 	private int x;
 	public int y;
 	public String str1 = "box";
 	public String str2 = "bus";
 	public String str3 = "zoo";
+	
+	public ReflectPoint() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public ReflectPoint(int x, int y) {
 		super();
 		this.x = x;
@@ -59,6 +65,22 @@ public class ReflectPoint {
 			return false;
 		return true;
 	}
+	/**  
+	 * 获取p  
+	 * @return p p  
+	 */
+	public ReflectPoint getP() {
+		return p;
+	}
+	
+	/**  
+	 * 设置p  
+	 * @param p p  
+	 */
+	public void setP(ReflectPoint p) {
+		this.p = p;
+	}
+	
 	/**  
 	 * 获取x  
 	 * @return x x  

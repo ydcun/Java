@@ -7,9 +7,9 @@ import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConversionException;
@@ -19,8 +19,6 @@ import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
 
 import com.ydcun.java.reflection.ReflectPoint;
-
-import javafx.scene.chart.PieChart.Data;
 
 /**
  * @author ydcun_home
@@ -74,7 +72,7 @@ public class IntrospectorTest {
 			}
 		}, Date.class);*/
 		//注册转换器  方法二
-		ConvertUtils.register(new DateLocaleConverter(),Date.class);//BeanUtils提供了一种实现
+		ConvertUtils.register(new DateLocaleConverter(),Date.class);//BeanUtils提供了一种实现  传入字符串是空串的时候会报错
 		BeanUtils.setProperty(pt1, "birthday","2016-07-30");
 		System.out.println(pt1.getBirthday().toString());
 		
@@ -84,6 +82,41 @@ public class IntrospectorTest {
 
 		PropertyUtils.setProperty(pt1, "x",9);
 		System.out.println(pt1.getX());
+		
+		
+		//beanutil填充
+		Map<String,Object> map = new HashMap();
+		Map<String,Object> subMap = new HashMap();
+		subMap.put("birthday","1991-04-06");
+		map.put("birthday", "2016-07-30");
+		map.put("p", subMap);
+		//对ReflectPoint类中的ReflectPoint属性进行注册转换器
+		ConvertUtils.register(new Converter() {
+			@Override
+			public Object convert(Class type, Object value) {
+				if(value==null){
+					return null;
+				}
+				if(!(value instanceof Map)){
+					throw new ConversionException("not convert, only Map type");
+				}
+				Map map = (Map)value;
+				ReflectPoint p = new ReflectPoint();
+				try {
+					BeanUtils.setProperty(p,"birthday", map.get("birthday"));
+				} catch (IllegalAccessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InvocationTargetException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return p;
+			}
+		}, ReflectPoint.class);
+		BeanUtils.populate(pt1, map);
+		System.out.println("F"+pt1.getBirthday());
+		System.out.println("sub"+pt1.getP().getBirthday());
 	}
 
 	/**

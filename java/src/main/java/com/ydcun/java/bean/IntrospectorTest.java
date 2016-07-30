@@ -31,7 +31,7 @@ public class IntrospectorTest {
 		setProperties(pt1, propertyName, value);
 		System.out.println(pt1.getX());
 
-		//用apache提供的BeanUtil工具类
+		//用apache提供的BeanUtil工具类（commons-beanutils  commons-logging的支持）
 		System.out.println(BeanUtils.getProperty(pt1, "x").getClass().getName());
 		BeanUtils.setProperty(pt1, "x","9");
 		System.out.println(pt1.getX());

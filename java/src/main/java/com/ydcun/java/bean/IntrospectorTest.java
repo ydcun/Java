@@ -16,8 +16,11 @@ import org.apache.commons.beanutils.ConversionException;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.Converter;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
 
 import com.ydcun.java.reflection.ReflectPoint;
+
+import javafx.scene.chart.PieChart.Data;
 
 /**
  * @author ydcun_home
@@ -44,7 +47,9 @@ public class IntrospectorTest {
 		
 		
 //		BeanUtils.setProperty(pt1, "birthday","2016-07-30");//不能将非基本数据类型自动转换
-		ConvertUtils.register(new Converter() {
+
+		/*//注册转换器  方法一
+		 ConvertUtils.register(new Converter() {
 			SimpleDateFormat sb = new SimpleDateFormat("yyyy-MM-dd");
 			@Override
 			public Object convert(Class type, Object value) {
@@ -67,7 +72,9 @@ public class IntrospectorTest {
 				}
 				return d;
 			}
-		}, Date.class);
+		}, Date.class);*/
+		//注册转换器  方法二
+		ConvertUtils.register(new DateLocaleConverter(),Date.class);//BeanUtils提供了一种实现
 		BeanUtils.setProperty(pt1, "birthday","2016-07-30");
 		System.out.println(pt1.getBirthday().toString());
 		

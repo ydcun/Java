@@ -20,17 +20,18 @@ import java.net.URL;
  */
 public class Server {
 	public static void main(String[] args) throws Exception {
-		 URL url = new URL("http://localhost:8080/a.txt");
-		 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		 
-		 conn.setRequestProperty("Range","bytes=5-");
-		 InputStream in = conn.getInputStream();
-		 int leng=0;
-		 byte buffer[] = new byte[1024];
-		 FileOutputStream out = new FileOutputStream("d:/a.txt",true);
-		 while((leng=in.read(buffer))>0){
-			 out.write(buffer, 0, leng);
-		 }
+//		 URL url = new URL("http://localhost:8080/a.txt");
+//		 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+//		 
+//		 conn.setRequestProperty("Range","bytes=5-");
+//		 InputStream in = conn.getInputStream();
+//		 int leng=0;
+//		 byte buffer[] = new byte[1024];
+//		 FileOutputStream out = new FileOutputStream("d:/a.txt",true);
+//		 while((leng=in.read(buffer))>0){
+//			 out.write(buffer, 0, leng);
+//		 }
+		demo1();
 		 
 		 
 	}

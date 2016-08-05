@@ -106,12 +106,12 @@ public class SelectSort {
 		System.out.println(Arrays.toString(arry));
 		//堆排序
 		System.out.println("堆排序");
-		heapSort(arry);
+		heapSort(arry.clone());
 		//直接选择排序
 		System.out.println("直接选择排序");
-		directSelect(arry);
+		directSelect(arry.clone());
 		//选择插入排序
 		System.out.println("选择插入排序");
-		selectInsert(arry);
+		selectInsert(arry.clone());
 	}
 }

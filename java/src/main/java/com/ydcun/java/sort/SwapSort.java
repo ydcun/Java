@@ -20,10 +20,10 @@ public class SwapSort {
 		System.out.println(Arrays.toString(arry));
 		//冒泡排序
 		System.out.println("冒泡排序");
-		bubbleSort(arry);
+		bubbleSort(arry.clone());
 		//快速排序
 		System.out.println("快速排序");
-		quickSort(arry);
+		quickSort(arry.clone());
 	}
 
 	/**
@@ -57,12 +57,13 @@ public class SwapSort {
 	 * @param end
 	 */
 	private void quickSortSub(int[] arry, int start, int end) {
-		if(start>end) return;
+		if(start>=end) return;
 		int base = arry[start];
 		int i=start,j=end+1,temp;
-		while(i<end && arry[++i] >=base);
-		while(j>start && arry[--j] <= base);
+		System.out.println("base:"+base+" start:"+start+" end:"+end);
 		while(true){
+			while(i<end && arry[++i] >=base);
+			while(j>start && arry[--j] <= base);
 			if(i<j){
 				temp = arry[i];
 				arry[i] = arry[j];

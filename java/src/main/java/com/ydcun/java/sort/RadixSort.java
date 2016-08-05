@@ -31,12 +31,14 @@ public class RadixSort {
         int[]order = new int[10]; //数组order 用来表示相同余数是i的数的个数
         while(m <= d)
         {
+        	//将相同余数的值放到temp第一维下标中
             for(int i = 0; i < arry.length; i++)
             {
                 int lsd = ((arry[i] / (int)Math.pow(10, m)) % 10);
                 temp[lsd][order[lsd]] = arry[i];
                 order[lsd]++;
             }
+            //将temp中的数据收集到arry中
             for(int i = 0; i < 10; i++)
             {
                 if(order[i] != 0)
@@ -48,7 +50,7 @@ public class RadixSort {
                 order[i] = 0;
             }
             k = 0;
-            System.out.println("m="+m+" "+Arrays.toString(arry));
+            System.out.println("第"+m+"趟 "+Arrays.toString(arry));
             m++;
         }
         System.out.println(Arrays.toString(arry));

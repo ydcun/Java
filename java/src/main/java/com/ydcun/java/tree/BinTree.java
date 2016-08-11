@@ -111,6 +111,39 @@ public class BinTree {
 			System.out.println();
 		}
 	}
+	/**
+	 * 递归先序遍历
+	 */
+	public void preOrderTraverse(TreeNode node){
+		if(node==null){
+			return;
+		}
+		System.out.print(node.value+" ");
+		preOrderTraverse(node.left);
+		preOrderTraverse(node.right);
+	}
+	/**
+	 * 递归中序遍历
+	 */
+	public void inorderTraverse(TreeNode node){
+		if(node==null){
+			return;
+		}
+		inorderTraverse(node.left);
+		System.out.print(node.value+" ");
+		inorderTraverse(node.right);
+	}
+	/**
+	 * 递归后序遍历
+	 */
+	public void postOrderTraverse(TreeNode node){
+		if(node==null){
+			return;
+		}
+		postOrderTraverse(node.left);
+		postOrderTraverse(node.right);
+		System.out.print(node.value+" ");
+	}
 	
 	/**
 	 * @return 返回树根节点
@@ -125,5 +158,16 @@ public class BinTree {
 		this.initLevel(array);
 		this.printTree();
 		System.out.println(this.getTreeDepth());
+		System.out.println("先序遍历(递归):");
+		//先序遍历
+		this.preOrderTraverse(this.getRoot());
+		System.out.println();
+		System.out.println("中序遍历(递归):");
+		//中序遍历
+		this.inorderTraverse(this.getRoot());
+		System.out.println();
+		System.out.println("后序遍历(递归):");
+		//后序遍历
+		this.postOrderTraverse(this.getRoot());
 	}
 }

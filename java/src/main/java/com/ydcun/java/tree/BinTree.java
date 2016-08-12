@@ -250,25 +250,25 @@ public class BinTree {
 		int[] array = {1,2,3,4,5,6,7,8,9,10,2,8,9,10,2,8,9,10,2,8,9,10,2,8,9,10,2,8,9,10,2};
 		this.initLevel(array);
 		this.printTree();
-		System.out.println(this.getTreeDepth());
-		System.out.println("先序遍历:");
+		System.out.println("树深度:"+this.getTreeDepth());
+		System.out.println("先序遍历递归实现:");
 		//先序遍历
 		this.preOrderTraverse(this.getRoot());
-		System.out.println();
+		System.out.println("\n非递归实现:");
 		this.preOrderTraverse2();
 		System.out.println();
-		System.out.println("中序遍历:");
+		System.out.println("\n中序遍历递归实现:");
 		//中序遍历
 		this.inorderTraverse(this.getRoot());
-		System.out.println();
+		System.out.println("\n非递归实现:");
 		this.inorderTraverse2();
 		System.out.println();
-		System.out.println("后序遍历:");
+		System.out.println("\n后序遍历递归实现:");
 		//后序遍历
 		this.postOrderTraverse(this.getRoot());
-		System.out.println();
+		System.out.println("\n非递归实现:");
 		this.postOrderTraverse2();
-		System.out.println();
+		System.out.println("\n非递归特殊情况实现:");
 		this.postOrderTraverse3();
 		System.out.println();
 	}

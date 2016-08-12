@@ -9,8 +9,10 @@ import java.util.List;
 import org.junit.Test;
 
 /**
- * @author ydcun-psjs
- *
+ *   二叉树实现案例
+ *   层序构造二叉树
+ *   二叉树，前序 中序 后序 遍历
+ *   二叉树树形结构打印
  */
 public class BinTree {
 	//树节点

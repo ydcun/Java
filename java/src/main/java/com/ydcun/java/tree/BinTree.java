@@ -5,6 +5,7 @@ package com.ydcun.java.tree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 import org.junit.Test;
 
@@ -20,6 +21,7 @@ public class BinTree {
 		int value;
 		TreeNode left;
 		TreeNode right;
+		int count;
 		public TreeNode(){}
 		public TreeNode(int value){
 			this.value = value;
@@ -146,7 +148,96 @@ public class BinTree {
 		postOrderTraverse(node.right);
 		System.out.print(node.value+" ");
 	}
-	
+	/**
+	 * 非递归先序遍历
+	 */
+	public void preOrderTraverse2(){
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode node = getRoot();
+		stack.push(node);
+		while(!stack.isEmpty()){
+			node = stack.pop();
+			System.out.print(node.value+" ");
+			if(node.right!=null){
+				stack.push(node.right);
+			}
+			if(node.left!=null){
+				stack.push(node.left);
+			}
+		}
+	}
+	/**
+	 * 非递归中序遍历
+	 */
+	public void inorderTraverse2(){
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode node = getRoot();
+		stack.push(node);
+		while(!stack.isEmpty()){
+			if(node.left!=null){
+				stack.push(node.left);
+				node = node.left;
+			}else{
+				node = stack.pop();
+				System.out.print(node.value+" ");
+				if(node.right!=null){
+					stack.push(node.right);
+					node = node.right;
+				}
+			}
+		}
+	}
+	/**
+	 * 非递归后遍历
+	 */
+	public void postOrderTraverse2(){
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode node = getRoot();
+		node.count++;
+		stack.push(node);
+		while(!stack.isEmpty()){
+			if(node.left!=null){
+				node.left.count++;
+				stack.push(node.left);
+				node = node.left;
+			}else{
+				node = stack.pop();
+				node.count++;
+				if(node.count==3){//第三次访问节点的时候打印
+					System.out.print(node.value+" ");
+				}
+				if(node.count==2){//第二次访问 在放入栈中
+					stack.push(node);
+				}
+				if(node.right!=null){
+					node.right.count++;
+					stack.push(node.right);
+					node = node.right;
+				}
+			}
+		}
+	}
+	/**
+	 * 非递归后序遍历特殊形式
+	 * 将先序遍历的左右颠倒，在逆序输出
+	 */
+	public void postOrderTraverse3(){
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode node = getRoot();
+		stack.push(node);
+		String sb="";
+		while(!stack.isEmpty()){
+			node = stack.pop();
+			sb = node.value+" "+sb;
+			if(node.left!=null){
+				stack.push(node.left);
+			}
+			if(node.right!=null){
+				stack.push(node.right);
+			}
+		}
+		System.out.println(sb);
+	}
 	/**
 	 * @return 返回树根节点
 	 */
@@ -160,16 +251,25 @@ public class BinTree {
 		this.initLevel(array);
 		this.printTree();
 		System.out.println(this.getTreeDepth());
-		System.out.println("先序遍历(递归):");
+		System.out.println("先序遍历:");
 		//先序遍历
 		this.preOrderTraverse(this.getRoot());
 		System.out.println();
-		System.out.println("中序遍历(递归):");
+		this.preOrderTraverse2();
+		System.out.println();
+		System.out.println("中序遍历:");
 		//中序遍历
 		this.inorderTraverse(this.getRoot());
 		System.out.println();
-		System.out.println("后序遍历(递归):");
+		this.inorderTraverse2();
+		System.out.println();
+		System.out.println("后序遍历:");
 		//后序遍历
 		this.postOrderTraverse(this.getRoot());
+		System.out.println();
+		this.postOrderTraverse2();
+		System.out.println();
+		this.postOrderTraverse3();
+		System.out.println();
 	}
 }

@@ -100,7 +100,9 @@ public class Huffman {
 		int[] array = new int[]{56,34,21,1,45,98};
 		this.HuffmanTree(array);
 		this.printNodeList();
-		for(int i=0;i<array.length;i++)
-		System.out.println(this.getCodeing(array[i]));
+		for(int i=0;i<array.length;i++){
+			//获取字符对应哈夫曼编码
+			System.out.println(this.getCodeing(array[i]));
+		}
 	}
 }

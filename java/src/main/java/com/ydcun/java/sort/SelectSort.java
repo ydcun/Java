@@ -31,7 +31,8 @@ public class SelectSort {
 		System.out.println(Arrays.toString(arry));
 	}
 	/**
-	 * 调整head的节点与直接子节点，使得最大的在head位置。当与子节点发生交互后同时使得交换后的节点与其子节点比较依次进行下去
+	 * 调整head的节点与直接子节点，使得最大的在head位置。
+	 * 当与子节点发生交互后同时使得交换后的节点与其子节点比较依次进行下去
 	 * @param arry
 	 * @param head
 	 * @param size

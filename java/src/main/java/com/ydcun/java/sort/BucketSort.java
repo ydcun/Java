@@ -37,6 +37,7 @@ public class BucketSort {
 		}
 		System.out.println("new buckets:\t"+Arrays.toString(buckets));
 		int[] tempArry = arry.clone();
+		//根据buckets 将数据对号入座
 		for(int i= arry.length-1;i>=0;i--){
 			arry[--buckets[tempArry[i]-min]] = tempArry[i];
 			System.out.println("i:"+i+" "+Arrays.toString(arry)+"tempArry[i]-min"+(tempArry[i]-min));

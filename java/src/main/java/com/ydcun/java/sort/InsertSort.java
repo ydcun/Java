@@ -40,7 +40,6 @@ public class InsertSort {
 					temp = array[j-1];
 					array[j-1] = array[j];
 					array[j] = temp;
-					System.out.println("1");
 				}
 			}
 			System.out.println("第"+i+"趟"+Arrays.toString(array));

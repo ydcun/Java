@@ -6,6 +6,7 @@ package com.ydcun.java.file;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +14,7 @@ import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.io.Reader;
 import java.util.Arrays;
+import java.util.Properties;
 
 /**
  * @author ydcun-psjs
@@ -30,7 +32,7 @@ import java.util.Arrays;
  *  但是需要注意的是，如果此处定义b 的大小为3或7等奇数，
  *  则对于全是汉字的一篇文档则不能全部正常读写了。
  */
-public class FileDemo {
+public class ReadFileDemo {
 	/**
 	 * 逐个字节读取  
 	 */
@@ -128,13 +130,13 @@ public class FileDemo {
 		}
 	}
 	/**随机读取文件内容**/
-    public static void readFileByRandomAccess(String fileName) {
+    public void readFileByRandomAccess(String fileName) {
         RandomAccessFile randomFile = null;
         try {
             System.out.println("随机读取一段文件内容：");
             // 打开一个随机访问文件流，按只读方式
             randomFile = new RandomAccessFile(fileName, "r");
-            // 文件长度，字节数
+            // 文件长度，字节数 速度很快
             long fileLength = randomFile.length();
             System.out.println(fileLength);
             // 读文件的起始位置
@@ -159,5 +161,17 @@ public class FileDemo {
             }
         }
     }
+    public void readPropertiesFile(String name){
+    	Properties pro = new Properties();
+    	try {
+			pro.load(new FileInputStream(name));
+			String str = pro.getProperty("xxx");
+			System.out.println(str);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+    
+    
 	
 }

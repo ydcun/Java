@@ -37,6 +37,7 @@ public class Verification extends HttpServlet {
 		response.setHeader("Cache-Control","no-cache");
 		response.setHeader("Pragma", "no-cache");
 		ImageIO.write(img, "jpg", response.getOutputStream());
+		
 	}
 
 	/**

@@ -2,66 +2,99 @@ package com.ydcun.java.a360;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
+class Node{
+	String name=null;
+}
 public class Main {
+	public static List<Node> list = new ArrayList<Node>();
+	public static int in=0;
 	public static void main(String[] args) throws Exception {
 		BufferedReader strin=new BufferedReader(new InputStreamReader(System.in));
-		String str1 = null;//保存从n到m经过的旗子序列
-		String str2 = null;//第一次醒来看到的序列
-		String str3 = null;//第二次醒来看到的序列
-		String temp1 = "forward";//正向
-		String temp2 = "backward";//反向
-		String temp3 = "both";//两种都有可能
-		String temp4 = "invalid";//都不可能
-		boolean isok1 = false;
-		boolean isok2 = false;
+		String str = strin.readLine();
+		String[] arr = str.split(" ");
+		int count = new Integer(arr[0]);
+		int count2 = new Integer(arr[1]);
+		for(int i=0;i<count2;i++){
+			list.add(new Node());
+		}
 		StringBuffer sb = new StringBuffer();
-		while(true){
-			str1 = strin.readLine();
-			if(str1==null || str1.equals("")){
+		for(int i=0;i<count;i++){
+			str = strin.readLine();
+			String[] tempArr = str.split(" ");
+			switch (tempArr[0]) {
+			case "new":
+				String result = newMethod(new Integer(tempArr[1]));
+				sb.append(result+"\n");
 				break;
-			}
-			str2 = strin.readLine();
-			str3 = strin.readLine();
-			
-			//计算匹配
-			//正向查找
-			isok1 = fowWard(str1,str2,str3);
-			String temp=null;
-			StringBuffer tempSb = new StringBuffer();
-			for(int i=0;i<str1.length();i++){
-				tempSb.append(str1.charAt(str1.length()-i-1));
-			}
-			//反向查找
-			isok2 = fowWard(tempSb.toString(),str2,str3);
-			
-			if(isok1){
-				if(isok2){
-					sb.append(temp3+"\n");
-				}else{
-					sb.append(temp1+"\n");
-				}
-			}else{
-				if(isok2){
-					sb.append(temp2+"\n");
-				}else{
-					sb.append(temp4+"\n");
-				}
+			case "del":
+				delMethod(new Integer(tempArr[1]));
+				break;
+			case "def":
+				defMethod();
+				break;
+			default:
+				break;
 			}
 		}
 		System.out.println(sb.toString());
 	}
-	private static boolean fowWard(String str1, String str2, String str3) {
-		int index1 = str1.indexOf(str2);
-		if(index1!=-1){
-			String temp =str1.substring(index1+str2.length());
-			int index2 = temp.indexOf(str3);
-			if(index2!=-1){
-				return true;
+	/**
+	 * 
+	 */
+	private static void defMethod() {
+		int i;
+		for(i=0;i<list.size();i++){
+			if(list.get(i).name==null){
+				break;
 			}
 		}
-		return false;
+		
+		for(int j=i;j<list.size();j++){
+			if(list.get(j).name!=null){
+				list.get(i).name=list.get(j).name;
+				list.get(j).name=null;
+				i++;
+			}
+		}
 	}
-
-	
+	/**
+	 * @param integer
+	 */
+	private static void delMethod(Integer name) {
+		for(int i=0;i<list.size();i++){
+			if(list.get(i).name!=null &&list.get(i).name.equals(name+"")){
+				list.get(i).name=null;
+			}
+		}
+	}
+	private static String newMethod(Integer size) {
+		int count =0;
+		int index=0;
+		boolean isok=true;
+		for(int i=0;i<list.size();i++){
+			if(list.get(i).name==null && isok){
+				index =i;
+				isok = false;
+			}
+			if(list.get(i).name==null){
+				count++;
+				if(count==size){
+					in++;
+					for(int j=0;j<size;j++){
+						if(j+index<list.size()){
+							list.get(j+index).name=in+"";
+						}
+					}
+					return in+"";
+				}
+			}else{
+				isok=true;
+				count=0;
+			}
+		}
+		return "NULL";
+	}
 }

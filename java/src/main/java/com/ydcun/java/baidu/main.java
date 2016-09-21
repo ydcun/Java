@@ -21,7 +21,7 @@ public class main {
 		Map<Character,Integer> base = new HashMap<Character,Integer>();
 		Character temp = str.charAt(0);
 		int length=0;
-		for(int i=0;i<str.length();i++){
+		for(int i=0;i<=str.length();i++){
 			Character tempChar = str.charAt(i);
 			if(temp.equals(tempChar)){
 				length++;
@@ -38,6 +38,7 @@ public class main {
 				temp = tempChar;
 				i--;
 			}
+			
 		}
 		int s = 0;
 		for(Character c:base.keySet()){

@@ -55,6 +55,8 @@ public class Main2 {
 		for(int i=0;i<Integer.parseInt(arr[0]);i++){
 			array[i] = Integer.parseInt(arrStr[i]);
 		}
+		arrStr=null;
+		System.gc();
         System.out.println(Main2.getCount());
     }
     

@@ -71,9 +71,13 @@ public class Main {
     }
     
     private static void swap(int [] array, int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+//        int temp = array[i];
+//        array[i] = array[j];
+//        array[j] = temp;
+    	if(i==j) return;
+        array[i] +=array[j];
+        array[j] = array[i]-array[j];
+        array[i] = array[i] - array[j];
     }
     
     public static void main(String[] args) throws Exception {

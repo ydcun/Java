@@ -7,7 +7,7 @@ import java.util.Arrays;
 /**
  *求任意一个数组中所有和为给定数的组合个数
  */
-public class Main2 {
+public class Main3 {
 
     private static int count = 0;
     private static int []array;
@@ -15,7 +15,7 @@ public class Main2 {
     
     static int getCount() {
         Arrays.sort(array);
-        Main2.sum(array.length-1);
+        Main3.sum(array.length-1);
         return count;
     }
     
@@ -57,7 +57,7 @@ public class Main2 {
 		}
 		arrStr=null;
 		System.gc();
-        System.out.println(Main2.getCount());
+        System.out.println(Main3.getCount());
     }
     
 }

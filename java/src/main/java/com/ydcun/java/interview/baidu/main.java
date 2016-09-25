@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ydcun.java.baidu;
+package com.ydcun.java.interview.baidu;
 
 import java.io.BufferedReader;
 import java.io.IOException;

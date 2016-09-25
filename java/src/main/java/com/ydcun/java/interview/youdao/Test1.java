@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ydcun.java.youdao;
+package com.ydcun.java.interview.youdao;
 
 import java.util.Scanner;
 

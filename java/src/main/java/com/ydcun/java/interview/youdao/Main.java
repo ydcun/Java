@@ -1,4 +1,4 @@
-package com.ydcun.java.youdao;
+package com.ydcun.java.interview.youdao;
 
 import java.util.ArrayList;
 import java.util.List;

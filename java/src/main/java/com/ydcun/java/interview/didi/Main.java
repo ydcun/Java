@@ -1,4 +1,4 @@
-package com.ydcun.java.didi;
+package com.ydcun.java.interview.didi;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

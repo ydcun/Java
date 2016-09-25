@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ydcun.java.toutiao;
+package com.ydcun.java.interview.toutiao;
 
 import java.io.BufferedReader;
 import java.io.IOException;

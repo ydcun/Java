@@ -1,4 +1,4 @@
-package com.ydcun.java.a360;
+package com.ydcun.java.interview.a360;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

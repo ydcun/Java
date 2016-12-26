@@ -1,4 +1,4 @@
-package com.ydcun.phash0;
+package com.ydcun.phash.phash0;
 import java.awt.Graphics2D;
 import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;

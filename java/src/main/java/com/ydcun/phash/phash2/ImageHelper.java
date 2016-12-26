@@ -1,4 +1,4 @@
-package com.ydcun.phash2;
+package com.ydcun.phash.phash2;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;

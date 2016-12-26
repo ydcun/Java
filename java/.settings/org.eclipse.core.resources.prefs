@@ -1,5 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
+encoding//src/main/java/com/ydcun/phash/phash1/Fingerprint.java=GBK
+encoding//src/main/java/com/ydcun/phash/phash1/ImageDigital.java=UTF-8
+encoding//src/main/java/com/ydcun/phash/phash1/Transformation.java=GBK
 encoding//src/test/java=UTF-8
 encoding//src/test/java/com/ydcun/java/file/AppTest2.txt=GBK
 encoding/<project>=UTF-8

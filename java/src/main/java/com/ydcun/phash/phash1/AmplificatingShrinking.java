@@ -1,17 +1,17 @@
-package com.ydcun.phash1;
+package com.ydcun.phash.phash1;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 /**
- * ͼ��ķŴ�����С
+ * 图锟斤拷姆糯锟斤拷锟斤拷锟叫�
  * @author xiaoxu
  *
  */
 public class AmplificatingShrinking {
 	
 	/**
-	 * ˫���Բ�ֵ��ͼ��ķŴ�
+	 * 双锟斤拷锟皆诧拷值锟斤拷图锟斤拷姆糯锟�
 	 * @param srcPath
 	 * @param distPath
 	 * @param formatName
@@ -25,31 +25,31 @@ public class AmplificatingShrinking {
 		ImageDigital.writeImg(imgOut, formatName, distPath);
 	}
 	/**
-	 * ˫���Բ�ֵ��ͼ��ķŴ�
+	 * 双锟斤拷锟皆诧拷值锟斤拷图锟斤拷姆糯锟�
 	 * 
 	 * @param img
-	 *            Ҫ��С��ͼ�����
+	 *            要锟斤拷小锟斤拷图锟斤拷锟斤拷锟�
 	 * @param k1
-	 *            Ҫ��С���б���
+	 *            要锟斤拷小锟斤拷锟叫憋拷锟斤拷
 	 * @param k2
-	 *            Ҫ��С���б���
-	 * @return ���ش�����ͼ�����
+	 *            要锟斤拷小锟斤拷锟叫憋拷锟斤拷
+	 * @return 锟斤拷锟截达拷锟斤拷锟斤拷图锟斤拷锟斤拷锟�
 	 */
 	public static BufferedImage bilinearityInterpolation(BufferedImage img, float k1, float k2) {
-		if (k1 < 1 || k2 < 1) {// ���k1 <1 || k2<1����ͼƬ��С�����ǷŴ�
+		if (k1 < 1 || k2 < 1) {// 锟斤拷锟絢1 <1 || k2<1锟斤拷锟斤拷图片锟斤拷小锟斤拷锟斤拷锟角放达拷
 			System.err
-					.println("this is shrink image funcation, please set k1<=1 and k2<=1��");
+					.println("this is shrink image funcation, please set k1<=1 and k2<=1锟斤拷");
 			return null;
 		}
-		float ii = 1 / k1; // �������м��
-		float jj = (1 / k2); // �������м��
+		float ii = 1 / k1; // 锟斤拷锟斤拷锟斤拷锟叫硷拷锟�
+		float jj = (1 / k2); // 锟斤拷锟斤拷锟斤拷锟叫硷拷锟�
 		int dd = (int) (ii * jj);
 		// int m=0 , n=0;
 		int imgType = img.getType();
-		int w = img.getWidth(); // ԭͼƬ�Ŀ�
-		int h = img.getHeight(); // ԭͼƬ�Ŀ�
-		int m = Math.round(k1 * w); // �Ŵ��ͼƬ�Ŀ�
-		int n = Math.round(k2 * h); // �Ŵ��ͼƬ�Ŀ�
+		int w = img.getWidth(); // 原图片锟侥匡拷
+		int h = img.getHeight(); // 原图片锟侥匡拷
+		int m = Math.round(k1 * w); // 锟脚达拷锟酵计拷目锟�
+		int n = Math.round(k2 * h); // 锟脚达拷锟酵计拷目锟�
 		int[] pix = new int[w * h];
 		pix = img.getRGB(0, 0, w, h, pix, 0, w);
 		/*
@@ -162,7 +162,7 @@ public class AmplificatingShrinking {
 							// + x0+k]) - cm.getRed(newpix[y0*m + x0+k]))));
 						}
 					}
-					if (i == w - 2 || l == d2 - 1) { // ���һ�еļ���
+					if (i == w - 2 || l == d2 - 1) { // 锟斤拷锟揭伙拷械募锟斤拷锟�
 						// f(1,y) = f(1,0) + c2*f(f(1,1)-f(1,0))
 						c = (float) l / d2;
 						r = cm.getRed(newpix[y0 * m + x1])
@@ -191,18 +191,18 @@ public class AmplificatingShrinking {
 	}
 	
 	/**
-	 * ˫������ֵ
+	 * 双锟斤拷锟斤拷锟斤拷值
 	 * 
 	 * @param srcPath
-	 *            ԭͼ���·��
+	 *            原图锟斤拷锟铰凤拷锟�
 	 * @param destPath
-	 *            Ŀ��ͼ���·��
+	 *            目锟斤拷图锟斤拷锟铰凤拷锟�
 	 * @param formatName
-	 *            ͼ���ļ���ʽ
+	 *            图锟斤拷锟侥硷拷锟斤拷式
 	 * @param k1
-	 *            ͼ��Ŀ�Ŵ����
+	 *            图锟斤拷目锟脚达拷锟斤拷锟�
 	 * @param k2
-	 *            ͼ��ĸ߷Ŵ����
+	 *            图锟斤拷母叻糯锟斤拷锟斤拷
 	 */
 	/*public static void biCubicInterpolationScale(String srcPath,
 			String destPath, String formatName, float k1, float k2) {
@@ -223,19 +223,19 @@ public class AmplificatingShrinking {
 	}*/
 	
 	/**
-	 * �ȼ��������ͼ��Ŵ�(��С)
+	 * 锟饺硷拷锟斤拷锟斤拷锟斤拷锟酵硷拷锟脚达拷(锟斤拷小)
 	 * 
 	 * @param img
-	 *            Ҫ�Ŵ�(��С)��ͼ�����
+	 *            要锟脚达拷(锟斤拷小)锟斤拷图锟斤拷锟斤拷锟�
 	 * @param k1
-	 *            Ҫ�Ŵ�(��С)���б���
+	 *            要锟脚达拷(锟斤拷小)锟斤拷锟叫憋拷锟斤拷
 	 * @param k2
-	 *            Ҫ�Ŵ�(��С)���б���
-	 * @return ���ش�����ͼ�����
+	 *            要锟脚达拷(锟斤拷小)锟斤拷锟叫憋拷锟斤拷
+	 * @return 锟斤拷锟截达拷锟斤拷锟斤拷图锟斤拷锟斤拷锟�
 	 */
 	public static BufferedImage flex(BufferedImage img, float k1, float k2) {
-		float ii = 1 / k1; // �������м��
-		float jj = 1 / k2; // �������м��
+		float ii = 1 / k1; // 锟斤拷锟斤拷锟斤拷锟叫硷拷锟�
+		float jj = 1 / k2; // 锟斤拷锟斤拷锟斤拷锟叫硷拷锟�
 		// int m=0 , n=0;
 		int imgType = img.getType();
 		int w = img.getWidth();
@@ -263,15 +263,15 @@ public class AmplificatingShrinking {
 	}
 
 	/**
-	 * �ȼ��������ͼ��Ŵ�(��С)
+	 * 锟饺硷拷锟斤拷锟斤拷锟斤拷锟酵硷拷锟脚达拷(锟斤拷小)
 	 * 
 	 * @param img
-	 *            Ҫ�Ŵ�(��С)��ͼ�����
+	 *            要锟脚达拷(锟斤拷小)锟斤拷图锟斤拷锟斤拷锟�
 	 * @param m
-	 *            �Ŵ�(��С)��ͼ��Ŀ�
+	 *            锟脚达拷(锟斤拷小)锟斤拷图锟斤拷目锟�
 	 * @param n
-	 *            �Ŵ�(��С)��ͼ��ĸ�
-	 * @return ���ش�����ͼ�����
+	 *            锟脚达拷(锟斤拷小)锟斤拷图锟斤拷母锟�
+	 * @return 锟斤拷锟截达拷锟斤拷锟斤拷图锟斤拷锟斤拷锟�
 	 */
 	public static BufferedImage flex(BufferedImage img, int m, int n) {
 		float k1 = (float) m / img.getWidth();
@@ -279,7 +279,7 @@ public class AmplificatingShrinking {
 		return flex(img, k1, k2);
 	}
 	/**
-	 * �ȼ��������ͼ��Ŵ�(��С)
+	 * 锟饺硷拷锟斤拷锟斤拷锟斤拷锟酵硷拷锟脚达拷(锟斤拷小)
 	 * @param srcPath
 	 * @param distPath
 	 * @param formatName
@@ -294,24 +294,24 @@ public class AmplificatingShrinking {
 	}
 	
 	/**
-	 * �ֲ���ֵ��ͼ����С
+	 * 锟街诧拷锟斤拷值锟斤拷图锟斤拷锟斤拷小
 	 * 
 	 * @param img
-	 *            Ҫ��С��ͼ�����
+	 *            要锟斤拷小锟斤拷图锟斤拷锟斤拷锟�
 	 * @param k1
-	 *            Ҫ��С���б���
+	 *            要锟斤拷小锟斤拷锟叫憋拷锟斤拷
 	 * @param k2
-	 *            Ҫ��С���б���
-	 * @return ���ش�����ͼ�����
+	 *            要锟斤拷小锟斤拷锟叫憋拷锟斤拷
+	 * @return 锟斤拷锟截达拷锟斤拷锟斤拷图锟斤拷锟斤拷锟�
 	 */
 	public static BufferedImage shrink(BufferedImage img, float k1, float k2) {
-		if (k1 > 1 || k2 > 1) {// ���k1 >1 || k2>1����ͼƬ�Ŵ󣬲�����С
+		if (k1 > 1 || k2 > 1) {// 锟斤拷锟絢1 >1 || k2>1锟斤拷锟斤拷图片锟脚大，诧拷锟斤拷锟斤拷小
 			System.err
-					.println("this is shrink image funcation, please set k1<=1 and k2<=1��");
+					.println("this is shrink image funcation, please set k1<=1 and k2<=1锟斤拷");
 			return null;
 		}
-		float ii = 1 / k1; // �������м��
-		float jj = 1 / k2; // �������м��
+		float ii = 1 / k1; // 锟斤拷锟斤拷锟斤拷锟叫硷拷锟�
+		float jj = 1 / k2; // 锟斤拷锟斤拷锟斤拷锟叫硷拷锟�
 		int dd = (int) (ii * jj);
 		// int m=0 , n=0;
 		int imgType = img.getType();
@@ -346,9 +346,9 @@ public class AmplificatingShrinking {
 				g = g / dd;
 				b = b / dd;
 				newpix[j * m + i] = 255 << 24 | r << 16 | g << 8 | b;
-				// 255<<24 | r<<16 | g<<8 | b �����ʽ����һ�£���ɫ��RGB���ڴ�����
-				// �Զ����Ƶ���ʽ����ģ����ҵ���1-8λ��ʾblue��9-16��ʾgreen��17-24��ʾred
-				// ����"<<24" "<<16" "<<8"�ֱ��ʾ����24,16,8λ
+				// 255<<24 | r<<16 | g<<8 | b 锟斤拷锟斤拷锟绞斤拷锟斤拷锟揭伙拷拢锟斤拷锟缴拷锟絉GB锟斤拷锟节达拷锟斤拷锟斤拷
+				// 锟皆讹拷锟斤拷锟狡碉拷锟斤拷式锟斤拷锟斤拷模锟斤拷锟斤拷业锟斤拷锟�1-8位锟斤拷示blue锟斤拷9-16锟斤拷示green锟斤拷17-24锟斤拷示red
+				// 锟斤拷锟斤拷"<<24" "<<16" "<<8"锟街憋拷锟绞撅拷锟斤拷锟�24,16,8位
 	
 				// newpix[j*m + i] = new Color(r,g,b).getRGB();
 			}
@@ -360,19 +360,19 @@ public class AmplificatingShrinking {
 		return imgOut;
 	}
 	/**
-	 * �ֲ���ֵ��ͼ����С
-	 * @param pix ͼ������ؾ���
-	 * @param w ԭͼ��Ŀ�
-	 * @param h ԭͼ��ĸ�
-	 * @param m ��С��ͼ��Ŀ�
-	 * @param n ��С��ͼ��ĸ�
+	 * 锟街诧拷锟斤拷值锟斤拷图锟斤拷锟斤拷小
+	 * @param pix 图锟斤拷锟斤拷锟斤拷鼐锟斤拷锟�
+	 * @param w 原图锟斤拷目锟�
+	 * @param h 原图锟斤拷母锟�
+	 * @param m 锟斤拷小锟斤拷图锟斤拷目锟�
+	 * @param n 锟斤拷小锟斤拷图锟斤拷母锟�
 	 * @return
 	 */
 	public static int[] shrink(int[] pix, int w, int h, int m, int n) {
 		float k1 = (float) m / w;
 		float k2 = (float) n / h;
-		int ii = (int)(1 / k1); // �������м��
-		int jj = (int)(1 / k2); // �������м��
+		int ii = (int)(1 / k1); // 锟斤拷锟斤拷锟斤拷锟叫硷拷锟�
+		int jj = (int)(1 / k2); // 锟斤拷锟斤拷锟斤拷锟叫硷拷锟�
 		int dd = ii * jj;
 		// int m=0 , n=0;
 		// int imgType = img.getType();
@@ -399,9 +399,9 @@ public class AmplificatingShrinking {
 				g = g / dd;
 				b = b / dd;
 				newpix[j * m + i] = 255 << 24 | r << 16 | g << 8 | b;
-				// 255<<24 | r<<16 | g<<8 | b �����ʽ����һ�£���ɫ��RGB���ڴ�����
-				// �Զ����Ƶ���ʽ����ģ����ҵ���1-8λ��ʾblue��9-16��ʾgreen��17-24��ʾred
-				// ����"<<24" "<<16" "<<8"�ֱ��ʾ����24,16,8λ
+				// 255<<24 | r<<16 | g<<8 | b 锟斤拷锟斤拷锟绞斤拷锟斤拷锟揭伙拷拢锟斤拷锟缴拷锟絉GB锟斤拷锟节达拷锟斤拷锟斤拷
+				// 锟皆讹拷锟斤拷锟狡碉拷锟斤拷式锟斤拷锟斤拷模锟斤拷锟斤拷业锟斤拷锟�1-8位锟斤拷示blue锟斤拷9-16锟斤拷示green锟斤拷17-24锟斤拷示red
+				// 锟斤拷锟斤拷"<<24" "<<16" "<<8"锟街憋拷锟绞撅拷锟斤拷锟�24,16,8位
 
 				// newpix[j*m + i] = new Color(r,g,b).getRGB();
 			}
@@ -410,15 +410,15 @@ public class AmplificatingShrinking {
 	}
 
 	/**
-	 * �ֲ���ֵ��ͼ����С
+	 * 锟街诧拷锟斤拷值锟斤拷图锟斤拷锟斤拷小
 	 * 
 	 * @param img
-	 *            Ҫ��С��ͼ�����
+	 *            要锟斤拷小锟斤拷图锟斤拷锟斤拷锟�
 	 * @param m
-	 *            ��С��ͼ��Ŀ�
+	 *            锟斤拷小锟斤拷图锟斤拷目锟�
 	 * @param n
-	 *            ��С��ͼ��ĸ�
-	 * @return ���ش�����ͼ�����
+	 *            锟斤拷小锟斤拷图锟斤拷母锟�
+	 * @return 锟斤拷锟截达拷锟斤拷锟斤拷图锟斤拷锟斤拷锟�
 	 */
 	public static BufferedImage shrink(BufferedImage img, int m, int n) {
 		float k1 = (float) m / img.getWidth();

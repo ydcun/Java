@@ -1,4 +1,4 @@
-package com.ydcun.phash1;
+package com.ydcun.phash.phash1;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;

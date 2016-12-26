@@ -1,4 +1,4 @@
-package com.ydcun.phash1;
+package com.ydcun.phash.phash1;
 
 import java.awt.image.BufferedImage;
 import java.math.BigInteger;
@@ -6,15 +6,15 @@ import java.math.BigInteger;
 
 public class Fingerprint {
 	/**
-	 * ͼƬ��С��Ŀ�
+	 * ͼƬ��С��Ŀ�?
 	 */
 	public static final int FWIDTH = 8;
 	/**
-	 *  ͼƬ��С��ĸ�
+	 *  ͼƬ��С��ĸ�?
 	 */
 	public static final int FHEIGHT = 8;
 	/**
-	 * ���ͼƬ��ָ����
+	 * ���ͼƬ��ָ����?
 	 * @param srcPath ͼƬ���ڵ�·��
 	 * @return ͼƬ��ָ����
 	 */
@@ -37,9 +37,9 @@ public class Fingerprint {
 	}
 	/**
 	 *  ��ͼƬ��ָ��
-	 * @param pix ͼ������ؾ���
-	 * @param w ͼ��Ŀ�
-	 * @param h ͼ��ĸ�
+	 * @param pix ͼ������ؾ���?
+	 * @param w ͼ��Ŀ�?
+	 * @param h ͼ��ĸ�?
 	 * @return
 	 */
 	public static long getFingerprint(int[] pix, int w, int h) {
@@ -63,7 +63,7 @@ public class Fingerprint {
 		if(sb.charAt(0) == '0') {
 			result = Long.parseLong(sb.toString(), 2);
 		} else {
-			//�����һ���ַ���1�����ʾ����������ֱ��ת����long��
+			//�����һ���ַ���?1�����ʾ����������ֱ��ת����long��
 			result = 0x8000000000000000l ^ Long.parseLong(sb.substring(1), 2);
 		}
 		
@@ -71,9 +71,9 @@ public class Fingerprint {
 	}
 	/**
 	 * ��Ҷ�ͼ��ľ�ֵ
-	 * @param pix ͼ������ؾ���
-	 * @param w ͼ��Ŀ�
-	 * @param h ͼ��ĸ�
+	 * @param pix ͼ������ؾ���?
+	 * @param w ͼ��Ŀ�?
+	 * @param h ͼ��ĸ�?
 	 * @return �ҶȾ�ֵ
 	 */
 	private static int averageGray(int[] pix, int w, int h) {
@@ -133,7 +133,7 @@ public class Fingerprint {
 		if(sb.charAt(0) == '0') {
 			result = Long.parseLong(sb.toString(), 2);
 		} else {
-			//�����һ���ַ���1�����ʾ����������ֱ��ת����long��
+			//�����һ���ַ���?1�����ʾ����������ֱ��ת����long��
 			result = 0x8000000000000000l ^ Long.parseLong(sb.substring(1), 2);
 		}
 		

@@ -1,9 +1,9 @@
-package com.ydcun.phash1;
+package com.ydcun.phash.phash1;
 
 import java.awt.image.BufferedImage;
 
 /**
- * ͼ��ı任
+ * ͼ��ı�?
  * @author luoweifu
  *
  */
@@ -24,9 +24,9 @@ public class Transformation {
 	
 	/**
 	 * ��ɢ���ұ任
-	 * @param pix ԭͼ������ݾ���
-	 * @param n ԭͼ��(n*n)�ĸ߻��
-	 * @return �任��ľ�������
+	 * @param pix ԭͼ������ݾ���?
+	 * @param n ԭͼ��(n*n)�ĸ߻��?
+	 * @return �任��ľ�������?
 	 */
 	public int[] DCT(int[] pix, int n) {		
 		double[][] iMatrix = new double[n][n]; 
@@ -53,8 +53,8 @@ public class Transformation {
 	/**
 	 * ����ת��
 	 * @param matrix ԭ����
-	 * @param n ����(n*n)�ĸ߻��
-	 * @return ת�ú�ľ���
+	 * @param n ����(n*n)�ĸ߻��?
+	 * @return ת�ú�ľ���?
 	 */
 	private double[][]  transposingMatrix(double[][] matrix, int n) {
 		double nMatrix[][] = new double[n][n];
@@ -67,7 +67,7 @@ public class Transformation {
 	}
 	/**
 	 * ����ɢ���ұ任��ϵ������
-	 * @param n n*n����Ĵ�С
+	 * @param n n*n����Ĵ��?
 	 * @return ϵ������
 	 */
 	private double[][] coefficient(int n) {
@@ -84,11 +84,11 @@ public class Transformation {
 		return coeff;
 	}
 	/**
-	 * �������
+	 * �������?
 	 * @param A ����A
 	 * @param B ����B
 	 * @param n ����Ĵ�Сn*n
-	 * @return �������
+	 * @return �������?
 	 */
 	private double[][] matrixMultiply(double[][] A, double[][] B, int n) {
 		double nMatrix[][] = new double[n][n];

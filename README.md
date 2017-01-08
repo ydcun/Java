@@ -45,8 +45,12 @@
     2. 构造方法不能是公有的
     3. 在构造方法中参数不能写 WeekDay3.valueOf(name);因为类都还没有初始化完不能调用只能先记住string在进行转换
     
- ###thread线程
+###thread线程
    1. 线程创建的三种方式，thread   runnable   callable
    2. 两个线程，三个线程同步执行
    3. 提交多个任务
    4. 缓存系统机制
+
+
+#textEdit
+	练习空间

@@ -33,9 +33,10 @@ public class CreateThread {
 		
 		//创建线程的第二种方法
 		new MyThread().start();
+		
+		//创建线程的第三种方法
 		List<FutureTask<Integer>> list = 
 				new ArrayList<FutureTask<Integer>>();
-		//创建线程的第三种方法
 		for(int i=0;i<100;i++){
 			MyThread2 myThread2 = new MyThread2();
 			FutureTask<Integer> ft  = new FutureTask<>(myThread2);

@@ -84,7 +84,7 @@ public class GoogleScholar {
 			for(int i=1;i<tempArr.length-1;i+=2){
 				map.put(tempArr[i],tempArr[i+1]);
 			}
-		} catch (FailingHttpStatusCodeException | IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();	
 		}
 		return map;

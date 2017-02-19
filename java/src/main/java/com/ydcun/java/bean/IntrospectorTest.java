@@ -92,7 +92,7 @@ public class IntrospectorTest {
 		map.put("p", subMap);
 		//对ReflectPoint类中的ReflectPoint属性进行注册转换器
 		ConvertUtils.register(new Converter() {
-			@Override
+			
 			public Object convert(Class type, Object value) {
 				if(value==null){
 					return null;

@@ -3,6 +3,10 @@
  */
 package com.ydcun.paper;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.Socket;
@@ -19,6 +23,7 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomNodeList;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.ydcun.java.interview.baidu.main;
 import com.ydcun.paper.entity.GooglePaper;
 
 /**
@@ -35,9 +40,10 @@ public class GoogleScholar {
 		client.getOptions().setJavaScriptEnabled(false);
 	}
 	@Test
-	public GooglePaper getPaperFromTitle(){
+	public GooglePaper getPaperFromTitle(String title){
 		try {
-			HtmlPage paperHtml =client.getPage("https://xue.glgoo.com/scholar?q=Motion Retargeting for the+Hand Gesture");
+//			HtmlPage paperHtml =client.getPage("https://xue.glgoo.com/scholar?q="+title);
+			HtmlPage paperHtml =client.getPage("https://www.xichuan.pub/scholar?q="+title);
 			HtmlElement paperDom = paperHtml.getHtmlElementById("gs_ccl_results");
 			List<HtmlElement> paperList = paperDom.getElementsByAttribute("div","class", "gs_ri");//页面所有文章
 			if(paperList==null || paperList.size()==0){
@@ -56,11 +62,11 @@ public class GoogleScholar {
 			String[] tempArr = ref_onclick_v.split("'");
 			String info =tempArr[1];
 			String scirp=tempArr[3];
-			Map<String, String> map = getRefFromPaper(info, scirp);
+			//Map<String, String> map = getRefFromPaper(info, scirp);
 			GooglePaper gPaper = new GooglePaper();
 			gPaper.setInfo(info);
 			gPaper.setRefCount(cited_count);
-			gPaper.setRefFormat(map);
+			//gPaper.setRefFormat(map);
 			gPaper.setScirp(scirp);
 			return gPaper;
 		} catch (Exception e) {
@@ -68,6 +74,21 @@ public class GoogleScholar {
 		}
 		return null;
 		
+	}
+	public static void main(String[] args) throws Exception {
+		GoogleScholar a = new GoogleScholar();
+			File file = new File("papers.txt");
+			BufferedReader reader = new BufferedReader(new FileReader(file));
+			String tempString;
+			int line=0;
+			while((tempString = reader.readLine())!=null){
+				try{
+				System.out.println(""+(++line)+":"+tempString+" 引用数:"+a.getPaperFromTitle(tempString).getRefCount());
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+				Thread.sleep(1000);
+			}
 	}
 	/**
 	 * @throws Exception

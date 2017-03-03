@@ -40,7 +40,7 @@ public class CallableAndFuture {
 		// 提交多个任务
 		ExecutorService pool2 = Executors.newFixedThreadPool(10);
 		CompletionService<Integer> completionService = new ExecutorCompletionService<Integer>(pool2);
-		Random rd = new Random();
+		final Random rd = new Random();
 		for (int i = 0; i < 20; i++) {
 			final int seq = i;
 			completionService.submit(new Callable<Integer>() {

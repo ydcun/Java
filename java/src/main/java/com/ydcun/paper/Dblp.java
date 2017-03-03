@@ -11,6 +11,7 @@ import org.junit.Test;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.ydcun.java.interview.baidu.main;
 import com.ydcun.paper.entity.DblpPaper;
 
 /**
@@ -18,12 +19,24 @@ import com.ydcun.paper.entity.DblpPaper;
  * dblp：http://dblp.uni-trier.de/pers/hd/c/Chen:Yiqiang
  */
 public class Dblp {
-	public static String url_dblp="http://dblp.uni-trier.de/pers/hd/c/Chen:Yiqiang";
+	public static String url_dblp="http://dblp.dagstuhl.de/pers/hd/k/Koshizuka:Noboru";
+//	public static String url_dblp="http://dblp.uni-trier.de/pers/hd/c/Chen:Yiqiang";
 	final WebClient webClient = new WebClient();
 	public void impactFactor() throws Exception {
 		final HtmlPage page = webClient.getPage("http://dblp.uni-trier.de/pers/hd/c/Chen:Yiqiang");
 	}
-	
+	public static void main(String[] args) {
+		try {
+			List<DblpPaper> list = new Dblp().homePage();
+			for(DblpPaper d:list){
+				System.out.println(d.getNr());
+				System.out.println(d.getTitel());
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	public List<DblpPaper> homePage() throws Exception {
 	    try{
 	        final HtmlPage page = webClient.getPage(url_dblp);
@@ -39,9 +52,13 @@ public class Dblp {
 	        	paper  = loadPager(el);
 	        	paperList.add(paper);
 	        }
+			for(HtmlElement el:clist){
+	        	paper  = loadPager(el);
+	        	paperList.add(paper);
+	        }
 			
 			for(DblpPaper p:paperList){
-				System.out.println(p);
+				//System.out.println(p);
 			}
 			return paperList;
 	    }catch(Exception e){
@@ -73,7 +90,12 @@ public class Dblp {
 		//题目
 		String title = itemprop.get(itemprop.size()-1).getTextContent();
 		//卷册
-		String volume = dblp_element.getElementsByAttribute("span","itemprop","volumeNumber").get(0).getTextContent();
+		String volume = null;
+		try{dblp_element.getElementsByAttribute("span","itemprop","volumeNumber").get(0).getTextContent();
+		}catch(Exception e){
+			//e.printStackTrace();
+			System.out.println("卷册信息未找到");
+		}
 		//页码
 		List<HtmlElement> pageNumberObject = dblp_element.getElementsByAttribute("span","itemprop","pagination");
 		String pageNumber = null;

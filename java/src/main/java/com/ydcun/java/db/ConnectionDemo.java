@@ -19,15 +19,16 @@ public class ConnectionDemo {
 	@Test
 	public void connDemo() throws ClassNotFoundException, SQLException{
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/books?useUnicode=true&characterEncoding=gb2312","root","123abc");
-		PreparedStatement psta = conn.prepareStatement("select * from authors");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/solo?useUnicode=yes&characterEncoding=utf8","root","123abc");
+		PreparedStatement psta = conn.prepareStatement("select * from b3_solo_archivedate");
 		ResultSet rs = psta.executeQuery();
 		while(rs.next()){
-			System.out.println(" "+rs.getString("lastName"));
+			System.out.println(" "+rs.getString(1));
 		}
 		rs.close();
 		psta.close();
 		conn.close();
+		
 	}
 	//@Test
 	public void update() throws Exception{

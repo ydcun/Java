@@ -1,0 +1,102 @@
+An activity transition based fall detection model on mobile devices
+ EXIT Chart-based Side Information Refinement for Wyner-Ziv Video Coding
+ A supervised learning based semantic location extraction method using mobile phone data
+面向反应力测试的自适应手势交互方法
+ FallAlarm: Smart Phone Based Fall Detecting and Positioning System
+ PPCare: A Personal and Pervasive Health Care System for the Elderly
+ InferLoc: Calibration Free Based LocationInference for Temporal and Spatial Fine-Granularity Magnitude
+ QoE-based opportunistic transmission for video broadcasting in heterogeneous circumstance
+ Distributed Video Coding: an overview of basics, research issues and solutions
+ 基于定向信号补偿的免标定室内定位方法 
+一种基于多终端动态协同的室内定位方法
+ 基于隐状态排序的半异构无线定位方法 
+ 一种人机交互戒指
+ 一种支持多点触摸手势的人机交互戒指
+ Power-efficient video encoding on resource-limited systems: A game-theoretic approach
+ 基于定向Wi-Fi的无线定位系统与方法
+ 基于双通道异构传感器融合的手势识别方法 
+ 盲用室内外无缝位置信息服务系统
+手势数据驱动的头部运动合成方法
+ 基于Android平台的室内LBS系统设计与实现 
+JOINT SCALABLE VIDEO AND DIGITAL FOUNTAIN CODING FOR HETEROGENEOUS QOS VIDEO BROADCASTING
+ CONTENT-AWARE UTILITY-FAIR VIDEO STREAMING IN WIRELESS BROADCASTING NETWORKS
+ Cross-People Mobile-Phone Based Activity Recognition
+ HETEROGENEOUS MULTIMODAL SENSORS BASED ACTIVITY RECOGNITION SYSTEM
+A NOVEL METHOD OF DIAGNOSING CORONARY HEART DISEASE BY ANALYSING ECG SIGNALS COMBINED WITH MOTION ACTIVITY
+ A ring-shaped interactive device for largeremote display and mobile device control
+ Joint Source-Channel Coding and Optimization for Layered Video Broadcasting to Heterogeneous Devices
+A perceptual macroblock layer power control for energy scalable video encoder based on just noticeable distortion principle
+实时无线视频传输容错控制算法 
+ 一种基于左右斜侧面照片的三维人脸重建方法
+ 无线局域网分布式自适应信道分配
+基于陀螺传感器的三维手势识别方案
+基于手势数据分析的地方手语动画合成方法研究
+ 普适多媒体信息发布系统的构建
+ 基于定向Wi-Fi的无线定位系统与方法 
+ SELM: Semi-supervised ELM with application in sparse calibrated location estimation
+Transfer Regression Model for Indoor 3D Location Estimation
+ Fall Detecting and Alarming Based on Mobile Phone
+ Rate-Distortion-Complexity Analysis on AVS Encoder
+面向手语合成的运动基元获取研究
+ MMS entertainment system based on mobile phone
+ Automatic Generation of Pencil Sketch for 2DImages
+一种改进的无线局域网DCF算法——OBS_MCP
+ 自然手语动作序列生成的研究
+基于事件框架的移动摘要方法研究
+基于历史路径概率匹配的室内定位方法 
+ ESVD: An Integrated Energy Scalable Framework for Low-Power Video Decoding Systems
+ 一种低成本普适网络环境构建及服务优化研究
+ 基于核岭回归的自适应蓝牙定位方法
+基于手机手势识别的媒体控制界面
+ 一种三维人头生成方法在Second Life中的应用
+基于点匹配的3D人脸网格自动转换方法
+ 真实感虚拟手语主持人的实现
+ Interactive 3D caricature generation based on double sampling
+ Semi-supervised Learning of Caricature Pattern from Manifold Regularization
+ User Behavior Mining for On-Line GUI Adaptation
+ Power Scalable Video Encoding Strategy Based on Game Theory
+A Calibration-Free Localization Solution for Handling Signal Strength Variance
+基于Direct3D逼真中国手语合成技术研究及应用实现
+ Semi-Supervised Learning in Reconstructed Manifold Space for 3D Caricature Generation
+ Building Sparse Multiple-Kernel SVM Classifiers
+ 面向广电节目的虚拟人手语合成显示平台研究
+Interactive expressive 3D caricatures design
+Personalized 3D Caricature Generation Based on PCA Subspace.
+ A complexity scalable decoder in an AVS video codec
+ Module and Distortion Analysis for Video Decoding on Mobile Devices
+AAML Based Avatar Animation with Personalized Expression for Online Chatting System
+ A FAST REGION-BASED INTER MODE SELECTION ALGORITHM
+ Adaptive Localization Through Transfer Learning in Indoor Wi-Fi Environment
+ 3D caricature generation by manifold learning
+一种自动分割人脸的方法
+基于语音情感识别的多表情人脸动画方法 
+ 室外Wi-Fi网状网在农村的发展和应用
+ Unequal error protection based on objective video evaluation model
+ Learning and memory of spatial relationship by a neural network with sparse features
+ Realistic facial animation synthesis and transfer based on flexible expression ratio image
+面向移动的卡通人脸生成系统
+ Mapping learning in eigenspace for harmonious caricature generation
+ Fuzzy velocity-based temporal dependency for SVM-driven realistic facial animation
+ Content-based human motion retrieval with automatic transition
+ A visual perceiving and eyeball-motion controlling neural network for object searching and locating
+Multidimensional Vector Regression for Accurate and Low-Cost Location Estimation in Pervasive Computing
+ 基于特征发现的卡通人脸肖像生成
+ Creative cartoon face synthesis system for mobile entertainment
+ Motion Retargeting for the Hand Gesture
+ Recognition of sign language subwords based on boosted hidden Markov models
+Accurate and low-cost location estimation using kernels
+HandTalker II: a Chinese sign language recognition and synthesis system
+ A novel approach to automatically extracting basic units from chinese sign language
+ Vision-based sign language recognition using sign-wise tied mixture hmm
+A vision-based sign language recognition system using tied-mixture density HMM
+ Transition movement models for large vocabulary continuous sign language recognition
+ LEAPS: A location estimation and action prediction system in a wireless LAN environment
+ SVR-based facial texture driving for realistic expression synthesis
+ A Kernel-Based Case Retrieval Algorithm with Application to Bioinformatics
+ A Chinese sign language recognition system based on SOFM/SRN/HMM
+ Learning and synthesizing MPEG-4 compatible 3-D face animation from video sequence
+ Gravity-center template based human face feature detection
+ Adaptive and Iterative Online Sequential ELM Based Mutli-Degree-of-Freedom Gesture Recognition System
+具有时效机制的增量式无线定位方法
+ 面向可穿戴设备的超声波手势识别方法
+ TOSELM:Timeliness Online Sequential Extreme Learning Machine

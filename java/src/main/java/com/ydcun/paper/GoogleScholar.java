@@ -42,8 +42,8 @@ public class GoogleScholar {
 	@Test
 	public GooglePaper getPaperFromTitle(String title){
 		try {
-//			HtmlPage paperHtml =client.getPage("https://xue.glgoo.com/scholar?q="+title);
-			HtmlPage paperHtml =client.getPage("https://www.xichuan.pub/scholar?q="+title);
+			HtmlPage paperHtml =client.getPage("https://xue.glgoo.com/scholar?q="+title);
+//			HtmlPage paperHtml =client.getPage("https://www.xichuan.pub/scholar?q="+title);
 			HtmlElement paperDom = paperHtml.getHtmlElementById("gs_ccl_results");
 			List<HtmlElement> paperList = paperDom.getElementsByAttribute("div","class", "gs_ri");//页面所有文章
 			if(paperList==null || paperList.size()==0){
@@ -77,7 +77,8 @@ public class GoogleScholar {
 	}
 	public static void main(String[] args) throws Exception {
 		GoogleScholar a = new GoogleScholar();
-			File file = new File("papers.txt");
+			File file = new File("papers");
+			System.out.println(file.getAbsolutePath());
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			String tempString;
 			int line=0;

@@ -1,0 +1,194 @@
+ 3D caricature generation by manifold learning
+ A Binning Design for Wyner-Ziv Video Coding
+ A Chinese sign language recognition system based on SOFM/SRN/HMM
+ A complexity scalable decoder in an AVS video codec
+ A FAST REGION-BASED INTER MODE SELECTION ALGORITHM
+ A Kernel-Based Case Retrieval Algorithm with Application to Bioinformatics
+ A novel approach to automatically extracting basic units from chinese sign language
+ A ring-shaped interactive device for largeremote display and mobile device control
+ A semi-supervised privacy-preserving clustering algorithm for healthcare
+ A supervised learning based semantic location extraction method using mobile phone data
+ A visual perceiving and eyeball-motion controlling neural network for object searching and locating
+ Adaptive and Iterative Online Sequential ELM Based Mutli-Degree-of-Freedom Gesture Recognition System
+ Adaptive Localization Through Transfer Learning in Indoor Wi-Fi Environment
+ AIR: recognizing activity through IR-based distance sensing on feet
+ Automatic Generation of Pencil Sketch for 2DImages
+ b-COELM:A fast, lightweight and accurate activity recognition model for mini-wearable devices
+ Building Sparse Multiple-Kernel SVM Classifiers
+ CaneFitter: investigation on appropriate cane selection and proper cane use for the elderly
+ CONTENT-AWARE UTILITY-FAIR VIDEO STREAMING IN WIRELESS BROADCASTING NETWORKS
+ Content-based human motion retrieval with automatic transition
+ ContextSense: Unobtrusive Discovery of Incremental Social Context using Dynamic Bluetooth Data
+ Creative cartoon face synthesis system for mobile entertainment
+ Cross-Layer Opportunistic Scheduling for Device-to-Device Video Multicast Services.
+ Cross-People Mobile-Phone Based Activity Recognition
+ Distributed Video Coding: an overview of basics, research issues and solutions
+ Efficient Task Sub-Delegation for Crowdsourcing
+ ESVD: An Integrated Energy Scalable Framework for Low-Power Video Decoding Systems
+ Evaluate mobile video quality in hybrid spatial and temporal domain
+ EXIT Chart-based Side Information Refinement for Wyner-Ziv Video Coding
+ EXIT-Based Side Information Refinement in Wyner-Ziv Video Coding
+ Extreme Learning Machines
+ Fall Detecting and Alarming Based on Mobile Phone
+ FallAlarm: Smart Phone Based Fall Detecting and Positioning System
+ Feature Adaptive Online Sequential Extreme Learning Machine for lifelong indoor localization
+ Fuzzy velocity-based temporal dependency for SVM-driven realistic facial animation
+ Gravity-center template based human face feature detection
+ HETEROGENEOUS MULTIMODAL SENSORS BASED ACTIVITY RECOGNITION SYSTEM
+ Indoor Location Estimation based on Local Magnetic Field via Hybrid Learnig
+ InferLoc: Calibration Free Based LocationInference for Temporal and Spatial Fine-Granularity Magnitude
+ Inferring social contextual behavior from bluetooth traces
+ Interactive 3D caricature generation based on double sampling
+ Joint Source-Channel Coding and Optimization for Layered Video Broadcasting to Heterogeneous Devices
+ LEAPS: A location estimation and action prediction system in a wireless LAN environment
+ Learning and memory of spatial relationship by a neural network with sparse features
+ Learning and synthesizing MPEG-4 compatible 3-D face animation from video sequence
+ Leveraging Two-Stage Weighted ELM for Multimodal Wearables Based Fall Detection
+ Lifelong and Fast Transfer Learning for Gesture Interaction
+ ManifoldConstrained Transfer of Facial Geometric Knowledge for 3D Caricature Reconstruction
+ Mapping learning in eigenspace for harmonious caricature generation
+ MMS entertainment system based on mobile phone
+ Module and Distortion Analysis for Video Decoding on Mobile Devices
+ Motion Retargeting for the Hand Gesture
+ Multi-Agent System Development MADE Easy
+ Online Deep Intelligence for Wi-Fi Indoor Localization
+ Power Scalable Video Encoding Strategy Based on Game Theory
+ Power-efficient video encoding on resource-limited systems: A game-theoretic approach
+ PPCare: A Personal and Pervasive Health Care System for the Elderly
+ Profit Improvement in Wireless Video Broadcasting System: A Marginal Principle Approach
+ QoE-based opportunistic transmission for video broadcasting in heterogeneous circumstance
+ Rate-Distortion-Complexity Analysis on AVS Encoder
+ Realistic facial animation synthesis and transfer based on flexible expression ratio image
+ Recognition of sign language subwords based on boosted hidden Markov models
+ SAP dissimilarity based high performance Wi-Fi indoor localization
+ SELM: Semi-supervised ELM with application in sparse calibrated location estimation
+ Semi-Supervised Learning in Reconstructed Manifold Space for 3D Caricature Generation
+ Semi-supervised Learning of Caricature Pattern from Manifold Regularization
+ SVR-based facial texture driving for realistic expression synthesis
+ TiPS: A lightweight Tele-immersive photograph system
+ TOSELM: Timeliness Online Sequential Extreme Learning Machine
+ Transition movement models for large vocabulary continuous sign language recognition
+ Unequal error protection based on objective video evaluation model
+ User Behavior Mining for On-Line GUI Adaptation
+ Vision-based sign language recognition using sign-wise tied mixture hmm
+ Wi-Fi and Motion Sensors Based Indoor LocalizationCombining ELM and Particle Filter
+ 复杂背景下多目标图像分割方法研究
+ 基于Android平台的室内LBS系统设计与实现 
+ 基于定向Wi-Fi的无线定位系统与方法
+ 基于定向信号补偿的免标定室内定位方法 
+ 基于核岭回归的自适应蓝牙定位方法
+ 基于深度传感器的在线视频分割后的处理方法及系统 
+ 基于双通道异构传感器融合的手势识别方法 
+ 基于特征发现的卡通人脸肖像生成
+ 基于异构数据融合的传感器协同手势识别方法及系统
+ 基于隐状态排序的半异构无线定位方法 
+ 邻域保持的虚拟人手语驱动头部运动合成方法
+ 马尔科夫随机场化的光照一致图像合成方法
+ 盲用室内外无缝位置信息服务系统
+ 面向广电节目的虚拟人手语合成显示平台研究
+ 面向可穿戴设备的超声波手势识别方法
+ 普适多媒体信息发布系统的构建
+ 融合多模传感器的室内实时高精度轨迹生成
+ 设备自适应的无线信号特征提取与定位方法
+ 室外Wi-Fi网状网在农村的发展和应用
+ 无线局域网分布式自适应信道分配
+ 虚拟视角自适应的视线矫正方法
+ 一种低成本普适网络环境构建及服务优化研究
+ 一种基于北斗定位终端的老人活跃度数据感知系统
+ 一种基于车载北斗定位终端的实时路况感知系统
+ 一种基于左右斜侧面照片的三维人脸重建方法
+ 一种人机交互戒指
+ 一种三维卡通人脸生成方法和系统
+ 一种三维人头生成方法在Second Life中的应用
+ 一种无反馈的分布式视频编解码方法及其系统
+ 一种用于视频会议的眼神交互方法及系统
+ 一种支持多点触摸手势的人机交互戒指
+ 真实感虚拟手语主持人的实现
+ 自然手语动作序列生成的研究
+A Calibration-Free Localization Solution for Handling Signal Strength Variance
+A Class Incremental Extreme Learning Machine for Activity Recognition
+A nonintrusive and single-point infrastructure-mediated sensing approach for water-use activity recognition
+A NOVEL METHOD OF DIAGNOSING CORONARY HEART DISEASE BY ANALYSING ECG SIGNALS COMBINED WITH MOTION ACTIVITY
+A novel wearable device for food intake and physical activity recognition
+A perceptual macroblock layer power control for energy scalable video encoder based on just noticeable distortion principle
+A vision-based sign language recognition system using tied-mixture density HMM
+AAML Based Avatar Animation with Personalized Expression for Online Chatting System
+Accurate and low-cost location estimation using kernels
+Accurate and Robust Moving-Object Segmentation for Telepresence Systems
+An activity transition based fall detection model on mobile devices
+ASELM: Adaptive semi-supervised ELM with application in question subjectivity identification
+Constraint Online Sequential Extreme Learning Machine for lifelong indoor localization system
+Cooperative mobile video transmission for traffic surveillance in smart cities
+HandTalker II: a Chinese sign language recognition and synthesis system
+Interactive expressive 3D caricatures design
+JOINT SCALABLE VIDEO AND DIGITAL FOUNTAIN CODING FOR HETEROGENEOUS QOS VIDEO BROADCASTING
+Modeling the hybrid temporal and spatial resolutions effect for web video quality evaluation
+Multidimensional Vector Regression for Accurate and Low-Cost Location Estimation in Pervasive Computing
+Personalized 3D Caricature Generation Based on PCA Subspace.
+ProCom: designing a mobile and wearable system to support proximity awareness for people with autism
+Profit Maximization through Online Advertising Scheduling for a Wireless Video Broadcast Network.
+Profit Optimization for Wireless Video Broadcasting Systems Based on Polymatroidal Analysis
+Recognizing extended surrounding contexts via class incremental learning
+RECOGNIZING TRANSPORTATION MODE ON MOBILE PHONE USING PROBABILITY FUSION OF EXTREME LEARNING MACHINES
+strDoctor: Indicate Stroke for Elderly through Body Sensing Game
+Text to Head Motion Synthesis for Chinese Sign Language Avatar
+Ti-Photograph: a tele-immersive photograph system for distributed parents and children
+Transfer Regression Model for Indoor 3D Location Estimation
+Unobtrusive Sensing Incremental Social Contexts Using Fuzzy Class Incremental Learning
+Unobtrusive sleep monitoring using smartphones
+Weighted extreme learning machine for imbalance learning
+Wi-Fi and Motion Sensors Based Indoor Localization Combining ELM and Particle Filter
+动态环境中的 wifi 指纹自适应室内定位方法
+个人运动管理系统中的行为识别方法
+基于Direct3D逼真中国手语合成技术研究及应用实现
+基于点匹配的3D人脸网格自动转换方法
+基于几何规则的多维空间对象融合模型
+基于历史路径概率匹配的室内定位方法 
+基于事件框架的移动摘要方法研究
+基于视觉注意机制PCNN模型的车牌图像分割方法 
+基于手机手势识别的媒体控制界面
+基于手势数据分析的地方手语动画合成方法研究
+基于陀螺传感器的三维手势识别方案
+基于语音情感识别的多表情人脸动画方法 
+具有时效机制的增量式无线定位方法
+面向反应力测试的自适应手势交互方法
+面向手语合成的运动基元获取研究
+面向移动的卡通人脸生成系统
+实时无线视频传输容错控制算法 
+手势数据驱动的头部运动合成方法
+一种改进的无线局域网DCF算法——OBS_MCP
+一种基于多终端动态协同的室内定位方法
+一种无反馈的优化码率的分布式视频编解码方法及其系统
+一种自动分割人脸的方法
+一种自动检测非手势模式的手势分割识别方法及系统 
+异构人脸在流形空间中的相似模型研究
+Demo abstract: WearableHUB: An open pervasive wearable data fusion platform for personal health management
+Learning Prosodic Patterns for Mandarin Speech Synthesis
+Multi-strategy data mining on mandarin prosodic patterns
+OCEAN: a new opportunistic computing model for wearable activity recognition
+Open Issues on Intelligent Sensor Networks
+Power-efficient access-point selection for indoor location estimation
+Slideshow: Gesture-aware ppt presentation
+Speech Driven MPEG-4 Based Face Animation via Neural Network
+Surrounding Context and Episode Awareness using Dynamic Bluetooth Data
+Using motor patterns for stroke detection
+手语合成中的多模式行为协同韵律模型
+  A coarse-to-fine feature selection method for accurate detection of cerebral small vessel disease
+ A Study of Players' Experiences During Brain Games Play
+ Extreme learning machine-based device displacement free activity recognition model
+ Heterogeneous Data Driven Manifold Regularization Model for Fingerprint Calibration Reduction
+ Intelligent protein 3D structure retrieval system
+ Less Annotation on Personalized Activity Recognition Using Context Data
+ LMSS: A Location-based Multimedia Service System Using Wireless Networks
+ LoSeCo: Location-based Search Computing for Pervasive Device Augmentation
+ Mining User Goals for Indoor Location Based Services with Low Energy and High QoS
+ Open Issues on Intelligent Sensor Networks
+ SLIDESHOW:GESTURE-AWARE PPT PRESENTATION
+ Speech Driven MPEG-4 Based Face Animation via Neural Network
+ WiFi-Based Power Aware Pervasive Device
+CSLDS: Chinese sign language dialog system
+Multi-strategy data mining on mandarin prosodic patterns
+Real-time and accurate indoor localization with fusion model of Wi-Fi fingerprint and motion particle filter
+Semi-supervised deep extreme learning machine for Wi-Fi based localization
+基于蓝牙动态特征的移动情境感知
+基于众包数据的室内定位方法和平台

@@ -127,6 +127,11 @@ sudo ln -s /usr/bin/llvm-gcc /Applications/Xcode.app/Contents/Developer/usr/bin/
     export BUILD_INSTALL=false
 ```
 3. make all 
+	![ok_1](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/ok_1.png)
+    
+	![ok_2](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/ok_2.png)
+    
+
 4. 遇到的问题
 
 - 问题1
@@ -137,6 +142,10 @@ sudo ln -s /usr/bin/llvm-gcc /Applications/Xcode.app/Contents/Developer/usr/bin/
     注释两处代码：第20061，21640行
     #as_fn_error $? "GCC compiler is required. Try setting --with-tools-dir." "$LINENO" 5
 ```
+	![问题1_1](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/1_1.png)
+
+	![问题1_2](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/1_2.png)
+
 
 - 问题2
 
@@ -181,6 +190,11 @@ sudo ln -s /usr/bin/llvm-gcc /Applications/Xcode.app/Contents/Developer/usr/bin/
         原：inline relocInfo prefix_relocInfo(int datalen) {
         修改后：inline relocInfo prefix_relocInfo(int datalen = 0) {
     ```
+	![问题2_1](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/2_1.png)
+
+	![问题2_2](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/2_2.png)
+
+  
 - 问题3
     ```
     问题3:
@@ -215,6 +229,9 @@ sudo ln -s /usr/bin/llvm-gcc /Applications/Xcode.app/Contents/Developer/usr/bin/
     80行原来 -cp 修改为：-Xbootclasspath/p
     如图：
     ``` 
+    ![问题3_1](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/3_1.png)
+    
+    
 
 
 

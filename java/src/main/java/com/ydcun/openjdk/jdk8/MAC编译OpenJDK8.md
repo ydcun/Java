@@ -140,11 +140,11 @@ sudo ln -s /usr/bin/llvm-gcc /Applications/Xcode.app/Contents/Developer/usr/bin/
 
 - 问题1
 ```
-	问题1：configure: error: GCC compiler is required
-    解决方法：
-    jdk8/common/autoconf/generated-configure.sh文件中
-    注释两处代码：第20061，21640行
-    #as_fn_error $? "GCC compiler is required. Try setting --with-tools-dir." "$LINENO" 5
+问题1：configure: error: GCC compiler is required
+解决方法：
+jdk8/common/autoconf/generated-configure.sh文件中
+注释两处代码：第20061，21640行
+#as_fn_error $? "GCC compiler is required. Try setting --with-tools-dir." "$LINENO" 5
 ```
 	![问题1_1](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/1_1.png)
 
@@ -153,89 +153,90 @@ sudo ln -s /usr/bin/llvm-gcc /Applications/Xcode.app/Contents/Developer/usr/bin/
 
 - 问题2
 
-    ```	
-    问题2: Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:367:27: error: friend declaration specifying a default argument must be a definition
-          inline friend relocInfo prefix_relocInfo(int datalen = 0);
-                                  ^
-        /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:462:18: error: friend declaration specifying a default argument must be the only declaration
-        inline relocInfo prefix_relocInfo(int datalen) {
-                         ^
-        /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:367:27: note: previous declaration is here
-          inline friend relocInfo prefix_relocInfo(int datalen = 0);
-                                  ^
-        /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:464:59: error: 'RAW_BITS' is a protected member of 'relocInfo'
-          return relocInfo(relocInfo::data_prefix_tag, relocInfo::RAW_BITS, relocInfo::datalen_tag | datalen);
-                                                                  ^
-        /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:272:23: note: declared protected here
-          enum RawBitsToken { RAW_BITS };
+```	
+问题2: Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:367:27: error: friend declaration specifying a default argument must be a definition
+      inline friend relocInfo prefix_relocInfo(int datalen = 0);
                               ^
-        /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:464:10: error: calling a protected constructor of class 'relocInfo'
-          return relocInfo(relocInfo::data_prefix_tag, relocInfo::RAW_BITS, relocInfo::datalen_tag | datalen);
-                 ^
-        /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:273:3: note: declared protected here
-          relocInfo(relocType type, RawBitsToken ignore, int bits)
-          ^
-        2 warnings and 4 errors generated.
-        make[8]: *** [precompiled.hpp.pch] Error 1
-        make[7]: *** [the_vm] Error 2
-        make[6]: *** [product] Error 2
-        make[5]: *** [generic_build2] Error 2
-        make[4]: *** [product] Error 2
-        make[3]: *** [all_product_universal] Error 2
-        make[2]: *** [universal_product] Error 2
-        make[1]: *** [/Users/ydcun-pro/workspace/openjdk/jdk8/build/macosx-x86_64-normal-server-release/hotspot/_hotspot.timestamp] Error 2
-        make: *** [hotspot-only] Error 2
-		
-       解决方法：vim hotspot/src/share/vm/code/relocInfo.hpp
-       	367行：
-        原：inline friend relocInfo prefix_relocInfo(int datalen = 0);
-        修改后：inline friend relocInfo prefix_relocInfo(int datalen);
-        462行：
-        原：inline relocInfo prefix_relocInfo(int datalen) {
-        修改后：inline relocInfo prefix_relocInfo(int datalen = 0) {
-    ```
-	![问题2_1](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/2_1.png)
+    /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:462:18: error: friend declaration specifying a default argument must be the only declaration
+    inline relocInfo prefix_relocInfo(int datalen) {
+                     ^
+    /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:367:27: note: previous declaration is here
+      inline friend relocInfo prefix_relocInfo(int datalen = 0);
+                              ^
+    /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:464:59: error: 'RAW_BITS' is a protected member of 'relocInfo'
+      return relocInfo(relocInfo::data_prefix_tag, relocInfo::RAW_BITS, relocInfo::datalen_tag | datalen);
+                                                              ^
+    /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:272:23: note: declared protected here
+      enum RawBitsToken { RAW_BITS };
+                          ^
+    /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:464:10: error: calling a protected constructor of class 'relocInfo'
+      return relocInfo(relocInfo::data_prefix_tag, relocInfo::RAW_BITS, relocInfo::datalen_tag | datalen);
+             ^
+    /Users/ydcun-pro/workspace/openjdk/jdk8/hotspot/src/share/vm/code/relocInfo.hpp:273:3: note: declared protected here
+      relocInfo(relocType type, RawBitsToken ignore, int bits)
+      ^
+    2 warnings and 4 errors generated.
+    make[8]: *** [precompiled.hpp.pch] Error 1
+    make[7]: *** [the_vm] Error 2
+    make[6]: *** [product] Error 2
+    make[5]: *** [generic_build2] Error 2
+    make[4]: *** [product] Error 2
+    make[3]: *** [all_product_universal] Error 2
+    make[2]: *** [universal_product] Error 2
+    make[1]: *** [/Users/ydcun-pro/workspace/openjdk/jdk8/build/macosx-x86_64-normal-server-release/hotspot/_hotspot.timestamp] Error 2
+    make: *** [hotspot-only] Error 2
+    
+   解决方法：vim hotspot/src/share/vm/code/relocInfo.hpp
+    367行：
+    原：inline friend relocInfo prefix_relocInfo(int datalen = 0);
+    修改后：inline friend relocInfo prefix_relocInfo(int datalen);
+    462行：
+    原：inline relocInfo prefix_relocInfo(int datalen) {
+    修改后：inline relocInfo prefix_relocInfo(int datalen = 0) {
+```
+![问题2_1](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/2_1.png)
 
-	![问题2_2](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/2_2.png)
+![问题2_2](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/2_2.png)
 
-  
+
 - 问题3
-    ```
-    问题3:
-    Running nasgen
-    Exception in thread "main" java.lang.VerifyError: class jdk.nashorn.internal.objects.ScriptFunctionImpl overrides final method setPrototype.(Ljava/lang/Object;)V
-    at java.lang.ClassLoader.defineClass1(Native Method)
-    at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
-    at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
-    at java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
-    at java.net.URLClassLoader.access$100(URLClassLoader.java:73)
-    at java.net.URLClassLoader$1.run(URLClassLoader.java:368)
-    at java.net.URLClassLoader$1.run(URLClassLoader.java:362)
-    at java.security.AccessController.doPrivileged(Native Method)
-    at java.net.URLClassLoader.findClass(URLClassLoader.java:361)
-    at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-    at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
-    at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-    at jdk.nashorn.internal.tools.nasgen.StringConstants.<clinit>(StringConstants.java:85)
-    at jdk.nashorn.internal.tools.nasgen.ScriptClassInstrumentor$2.visitMethodInsn(ScriptClassInstrumentor.java:157)
-    at jdk.internal.org.objectweb.asm.MethodVisitor.visitMethodInsn(MethodVisitor.java:509)
-    at jdk.internal.org.objectweb.asm.ClassReader.readCode(ClassReader.java:1445)
-    at jdk.internal.org.objectweb.asm.ClassReader.readMethod(ClassReader.java:1046)
-    at jdk.internal.org.objectweb.asm.ClassReader.accept(ClassReader.java:722)
-    at jdk.internal.org.objectweb.asm.ClassReader.accept(ClassReader.java:535)
-    at jdk.nashorn.internal.tools.nasgen.Main.process(Main.java:121)
-    at jdk.nashorn.internal.tools.nasgen.Main.processAll(Main.java:88)
-    at jdk.nashorn.internal.tools.nasgen.Main.main(Main.java:62)
-    make[1]: *** [/Users/ydcun-pro/workspace/openjdk/jdk8/build/macosx-x86_64-normal-server-release/nashorn/classes/_the.nasgen.run] Error 1
-    make: *** [nashorn-only] Error 2
+```
+问题3:
+Running nasgen
+Exception in thread "main" java.lang.VerifyError: class jdk.nashorn.internal.objects.ScriptFunctionImpl overrides final method setPrototype.(Ljava/lang/Object;)V
+at java.lang.ClassLoader.defineClass1(Native Method)
+at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+at java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
+at java.net.URLClassLoader.access$100(URLClassLoader.java:73)
+at java.net.URLClassLoader$1.run(URLClassLoader.java:368)
+at java.net.URLClassLoader$1.run(URLClassLoader.java:362)
+at java.security.AccessController.doPrivileged(Native Method)
+at java.net.URLClassLoader.findClass(URLClassLoader.java:361)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+at jdk.nashorn.internal.tools.nasgen.StringConstants.<clinit>(StringConstants.java:85)
+at jdk.nashorn.internal.tools.nasgen.ScriptClassInstrumentor$2.visitMethodInsn(ScriptClassInstrumentor.java:157)
+at jdk.internal.org.objectweb.asm.MethodVisitor.visitMethodInsn(MethodVisitor.java:509)
+at jdk.internal.org.objectweb.asm.ClassReader.readCode(ClassReader.java:1445)
+at jdk.internal.org.objectweb.asm.ClassReader.readMethod(ClassReader.java:1046)
+at jdk.internal.org.objectweb.asm.ClassReader.accept(ClassReader.java:722)
+at jdk.internal.org.objectweb.asm.ClassReader.accept(ClassReader.java:535)
+at jdk.nashorn.internal.tools.nasgen.Main.process(Main.java:121)
+at jdk.nashorn.internal.tools.nasgen.Main.processAll(Main.java:88)
+at jdk.nashorn.internal.tools.nasgen.Main.main(Main.java:62)
+make[1]: *** [/Users/ydcun-pro/workspace/openjdk/jdk8/build/macosx-x86_64-normal-server-release/nashorn/classes/_the.nasgen.run] Error 1
+make: *** [nashorn-only] Error 2
 
-	修改：vim nashorn/make/BuildNashorn.gmk 
-    80行原来 -cp 修改为：-Xbootclasspath/p
-    如图：
-    ``` 
-    ![问题3_1](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/3_1.png)
+修改：vim nashorn/make/BuildNashorn.gmk 
+80行原来 -cp 修改为：-Xbootclasspath/p
+如图：
+``` 
+![问题3_1](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/3_1.png)
     
     
+## 参考文献
 > [Mac OSX 10.9 上build openjdk8和openjdk7](http://yueyemaitian.iteye.com/blog/2038304)
 > [Mac OS编译OpenJDK8](http://blog.csdn.net/lizhengjava/article/details/60138890)
 > [Mac os下编译openJDK 7](http://blog.csdn.net/j754379117/article/details/53695426)

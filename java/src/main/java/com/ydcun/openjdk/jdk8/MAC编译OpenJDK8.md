@@ -1,5 +1,9 @@
 # MAC编译OpenJDK8
 
+[TOC]
+
+
+
 ## 当前环境
 1. mac 10.12.5
 2. 系统已经安装了JDK1.8.121
@@ -232,6 +236,11 @@ sudo ln -s /usr/bin/llvm-gcc /Applications/Xcode.app/Contents/Developer/usr/bin/
     ![问题3_1](https://raw.githubusercontent.com/ydcun/Java/master/java/src/main/java/com/ydcun/openjdk/jdk8/image/3_1.png)
     
     
+> [Mac OSX 10.9 上build openjdk8和openjdk7](http://yueyemaitian.iteye.com/blog/2038304)
+> [Mac OS编译OpenJDK8](http://blog.csdn.net/lizhengjava/article/details/60138890)
+> [Mac os下编译openJDK 7](http://blog.csdn.net/j754379117/article/details/53695426)
+> [Mac编译OpenJDK7(8)和Eclipse调试Hotspot](http://www.itnose.net/detail/6531887.html)
+> [编译openjdk过程中遇到的错误](https://xiexianbin.cn/java/2017/03/15/OpenJDK-compile-error)
 
 
 

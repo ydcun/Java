@@ -9,9 +9,9 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		int num = scan.nextInt();
 		for (int i = 0; i < num; i++) {
-			List<Integer> list1 = new ArrayList<>();
-			List<Integer> list2 = new ArrayList<>();
-			List<Integer> list = new ArrayList<>();
+			List<Integer> list1 = new ArrayList<Integer>();
+			List<Integer> list2 = new ArrayList<Integer>();
+			List<Integer> list = new ArrayList<Integer>();
 			int n = scan.nextInt();
 			int k = scan.nextInt();
 			for (int j = 0; j < n; j++) {

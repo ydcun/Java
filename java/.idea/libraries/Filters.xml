@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Filters">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Filters.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jacob.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

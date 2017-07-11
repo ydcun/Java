@@ -9,7 +9,7 @@
         <module name="java" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="java" target="1.5" />
     </bytecodeTargetLevel>
   </component>

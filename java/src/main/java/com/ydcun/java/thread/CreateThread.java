@@ -22,7 +22,7 @@ public class CreateThread {
 	public static void main(String[] args) throws Exception {
 		//创建线程的第一种方法
 		new Thread(new Runnable() {
-			@Override
+
 			public void run() {
 				for (int i = 0; i < 100; i++) {
 					System.out.print(1);
@@ -39,7 +39,7 @@ public class CreateThread {
 				new ArrayList<FutureTask<Integer>>();
 		for(int i=0;i<100;i++){
 			MyThread2 myThread2 = new MyThread2();
-			FutureTask<Integer> ft  = new FutureTask<>(myThread2);
+			FutureTask<Integer> ft  = new FutureTask<Integer>(myThread2);
 			myThread2.value = i;
 			new Thread(ft).start();
 			list.add(0,ft);
@@ -62,7 +62,7 @@ class MyThread extends Thread{
 class MyThread2 implements Callable<Integer>{
 	public Integer value=null;
 	Random rd = new Random();
-	@Override
+
 	public Integer call() throws Exception {
 		Thread.sleep(rd.nextInt(100)*10);
 		return value;

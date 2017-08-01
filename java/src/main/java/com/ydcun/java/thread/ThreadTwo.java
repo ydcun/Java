@@ -18,7 +18,7 @@ class Task {
 	}
 
 	public synchronized void main(int j) {
-		if (isSubThread) {
+		while(isSubThread) {
 			try {
 				this.wait();
 			} catch (InterruptedException e) {

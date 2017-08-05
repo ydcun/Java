@@ -3,11 +3,12 @@
  */
 package com.ydcun.java.tree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import org.junit.Test;
+
+import javax.management.Query;
 
 /**
  *   二叉树实现案例
@@ -86,6 +87,38 @@ public class BinTree {
 			depth++;
 		}
 		return depth;
+	}
+	public int getTreeDepthQueue(TreeNode node){
+		int depth =0;
+		if(node==null){
+			return depth;
+		}
+		Queue<TreeNode> queue = new LinkedBlockingQueue<TreeNode>();
+		queue.add(node);
+		while(!queue.isEmpty()){
+			int count = queue.size();
+			for(int i=0;i<count;i++){
+				node = queue.remove();
+				if(node.left!=null){
+					queue.add(node.left);
+				}
+				if(node.right!=null){
+					queue.add(node.left);
+				}
+			}
+			depth++;
+		}
+		return depth;
+
+
+	}
+	public int getTreeDepthDG(TreeNode node){
+		if(node ==null){
+			return 0;
+		}
+		int left = getTreeDepthDG(node.left);
+		int right = getTreeDepthDG(node.right);
+		return left>right?left+1:right+1;
 	}
 	public void printTree(){
 		if(getRoot()==null){
@@ -203,11 +236,11 @@ public class BinTree {
 			}else{
 				node = stack.pop();
 				node.count++;
-				if(node.count==3){//第三次访问节点的时候打印
-					System.out.print(node.value+" ");
-				}
 				if(node.count==2){//第二次访问 在放入栈中
 					stack.push(node);
+				}
+				if(node.count==3){//第三次访问节点的时候打印
+					System.out.print(node.value+" ");
 				}
 				if(node.right!=null){
 					node.right.count++;
@@ -251,6 +284,8 @@ public class BinTree {
 		this.initLevel(array);
 		this.printTree();
 		System.out.println("树深度:"+this.getTreeDepth());
+		System.out.println("树深度:"+this.getTreeDepthQueue(this.getRoot()));
+		System.out.println("树深度(递归):"+this.getTreeDepthDG(this.getRoot()));
 		System.out.println("先序遍历递归实现:");
 		//先序遍历
 		this.preOrderTraverse(this.getRoot());

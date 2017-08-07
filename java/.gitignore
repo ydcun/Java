@@ -1,2 +1,10 @@
-/target/
+.settings/
+/build/
 .classpath
+.project
+
+.idea/
+out/
+target/
+lsj_api.iml
+

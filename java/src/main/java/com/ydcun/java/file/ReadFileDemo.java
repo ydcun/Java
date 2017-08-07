@@ -16,6 +16,8 @@ import java.io.Reader;
 import java.util.Arrays;
 import java.util.Properties;
 
+import org.springframework.core.io.support.PropertiesLoaderUtils;
+
 /**
  * @author ydcun-psjs
  *  字节读取二进制文件，图片，录音，视频
@@ -162,6 +164,7 @@ public class ReadFileDemo {
         }
     }
     public void readPropertiesFile(String name){
+    	//conf =PropertiesLoaderUtils.loadAllProperties("/config.properties"); 这也是一种方式spring提供的 读取内存里的，修改了就去读取新的
     	Properties pro = new Properties();
     	try {
 			pro.load(new FileInputStream(name));
@@ -171,7 +174,5 @@ public class ReadFileDemo {
 			e.printStackTrace();
 		}
     }
-    
-    
 	
 }

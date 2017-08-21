@@ -78,12 +78,17 @@
           <version>RELEASE</version>
       </dependency>
 
+<<<<<<< HEAD
 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-core</artifactId>
 	    <version>4.3.8.RELEASE</version>
 	</dependency>
+=======
+
+
+>>>>>>> bd6c6f9c6a7b1c1fed333b7110469dbe74f01df2
 
   </dependencies>
   

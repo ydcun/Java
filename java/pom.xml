@@ -9,7 +9,16 @@
 
   <name>java</name>
   <url>http://maven.apache.org</url>
-
+<build>
+	<resources>
+		<resource>
+			<directory>src/main/java</directory>
+			<includes>
+				<include>**/*.doc</include>
+			</includes>
+		</resource>
+	</resources>
+</build>
   <properties>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -84,6 +93,9 @@
 	    <artifactId>spring-core</artifactId>
 	    <version>4.3.8.RELEASE</version>
 	</dependency>
+
+
+
   </dependencies>
   
 </project>

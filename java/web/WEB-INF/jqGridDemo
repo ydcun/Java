@@ -1,3 +1,6 @@
+http://blog.mn886.net/jqGrid/
+3.6新特征
+
 //jqgrid 列可拖拽 & 当前页排序
                 var pager_selector2 = "#grid-pager2";
                 jQuery("#grid-table2").jqGrid({

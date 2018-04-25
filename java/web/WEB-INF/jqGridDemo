@@ -1,0 +1,41 @@
+//jqgrid 列可拖拽 & 当前页排序
+                var pager_selector2 = "#grid-pager2";
+                jQuery("#grid-table2").jqGrid({
+                    sortable: true,
+                    remoteSort:false,
+                    url: "/demo/demo-jqGrid.ajax",
+                    datatype: "json",
+                    postData: {
+                        searchValue: "test"
+                    },
+                    height: '100%',
+                    mtype: 'GET',
+                    colNames: ['id', 'name', 'erp', 'email'],
+                    colModel: [
+                        {name: 'id', index: 'id', width: 60, sortable: false},
+                        {name: 'name', index: 'name', width: 90,fixed: true,formatter: function (cellvalue, options, rowObject) {
+                                var html = '<a data-id="' + rowObject.id + '" href="/urm/ui/rightmanager/index.html?id="'+rowObject.id +'  target="_blank">' + cellvalue + '</a>';
+                                return html}},
+                        {name: 'erp', index: 'erp', width: 100, fixed: true},
+                        {name: 'email', index: 'email', fixed: false}
+                    ],
+                    multiselect: true,
+                    viewrecords: true,
+                    rowNum: 5,
+                    rowList: [5, 10, 20, 50, 100],
+                    pager: pager_selector2,
+                    altRows: true,
+                    autowidth: true,
+                    autoScroll: true,
+                    shrinkToFit: false,  //根据width计算每列宽度的算法。默认值为true。如果shrinkToFit为true且设置了width值，则每列宽度会根据width成比例缩放；如果shrinkToFit为false且设置了width值，则每列的宽度不会成比例缩放，而是保持原有设置，而Grid将会有水平滚动条
+                    loadComplete: function (xhr) {
+                        jqGrid.initWidth(jQuery, '.jd-table', ".jd-table-parent");
+                        jqGrid.reset(jQuery);
+                    }
+                });
+
+                 PS：
+                    1. sortable: true 启动列可拖拽和列排序
+                    2. {name: 'id', index: 'id', width: 60, sortable: false} 列定义中的sortable：false禁用列排序。
+                        通过每列配置该参数禁用列排序
+                    3. remoteSort: true 默认为远程排序，false进行当前页排序

@@ -27,8 +27,8 @@ public class ICTAutoAuthentication {
 //		String path = ICTAutoAuthentication.class.getResource("").getPath();
 //		conf.load(new FileInputStream(new File("./conf.properties")));
 		
-		String password = Md5("12345678").substring(8, 24);
-		String requestStr = "username=pengxiaohui&password=" + password + "&drop=0&type=1&n=100";
+		String password = Md5("123456789").substring(8, 24);
+		String requestStr = "username=yudiancun&password=" + password + "&drop=0&type=1&n=100";
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(FORMAT_FULL_CN);
 
